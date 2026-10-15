@@ -1,0 +1,1134 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>body{margin:0} img{max-width:100%} [hidden]{display:none!important}</style>
+<title>第9组答辩手册</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Noto+Serif+SC:wght@600;700&display=swap">
+<style>
+/* Layout: one reading column (max 800px) under a sticky study toolbar; each member's part is keyed to the blue / orange / green used in the project's own charts */
+:root {
+  --bg: #f3f5f7;
+  --paper: #ffffff;
+  --ink: #14181e;
+  --ink-2: #464f5b;
+  --muted: #6f7886;
+  --line: #dbe0e6;
+  --code: #eaeef3;
+  --accent: #2560c4;
+  --accent-ink: #ffffff;
+  --m1: #2766c9;
+  --m1-soft: #e4edfb;
+  --m2: #bb4f27;
+  --m2-soft: #faeae2;
+  --m3: #0f7a63;
+  --m3-soft: #ddf2eb;
+  --all: #5a6372;
+  --all-soft: #e9ecf0;
+  --warn: #8f5500;
+  --warn-soft: #fbf0dc;
+  --font-display: "Noto Serif SC", "Songti SC", "STSong", "SimSun", serif;
+  --font-body: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0e1114; --paper: #161a1f; --ink: #e6e9ed; --ink-2: #b2b9c3; --muted: #88909c;
+    --line: #29303a; --code: #1d232a; --accent: #7aa7f2; --accent-ink: #0e1114;
+    --m1: #7aa7f2; --m1-soft: #19283f; --m2: #f0916b; --m2-soft: #37231b; --m3: #4fc6a0; --m3-soft: #12302a;
+    --all: #a6afbb; --all-soft: #222830; --warn: #e3a74b; --warn-soft: #32270f;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0e1114; --paper: #161a1f; --ink: #e6e9ed; --ink-2: #b2b9c3; --muted: #88909c;
+  --line: #29303a; --code: #1d232a; --accent: #7aa7f2; --accent-ink: #0e1114;
+  --m1: #7aa7f2; --m1-soft: #19283f; --m2: #f0916b; --m2-soft: #37231b; --m3: #4fc6a0; --m3-soft: #12302a;
+  --all: #a6afbb; --all-soft: #222830; --warn: #e3a74b; --warn-soft: #32270f;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: var(--font-body); font-size: 16px; line-height: 1.75;
+  padding-inline: 16px; -webkit-text-size-adjust: 100%;
+}
+.page { max-width: 800px; margin: 0 auto; padding-block: 32px 72px; }
+h1, h2, h3, h4 { font-family: var(--font-display); color: var(--ink); line-height: 1.35; margin: 0; text-wrap: balance; }
+h1 { font-size: clamp(30px, 7vw, 44px); font-weight: 700; letter-spacing: 0.02em; }
+h2 { font-size: clamp(22px, 4.6vw, 27px); font-weight: 700; }
+h3 { font-size: 19px; font-weight: 600; padding-top: 8px; }
+h4 { font-size: 16px; font-weight: 600; }
+p { margin: 0; }
+a { color: var(--accent); }
+code { font-family: var(--font-mono); font-size: 0.88em; }
+p code, li code, dd code, td code { background: var(--code); padding: 1px 5px; border-radius: 4px; overflow-wrap: anywhere; }
+pre {
+  margin: 0; background: var(--code); border-radius: 6px; padding: 12px 14px; overflow-x: auto;
+  font-family: var(--font-mono); font-size: 13px; line-height: 1.6; color: var(--ink);
+}
+pre code { font-size: inherit; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+
+[data-member="1"] { --mc: var(--m1); --mc-soft: var(--m1-soft); }
+[data-member="2"] { --mc: var(--m2); --mc-soft: var(--m2-soft); }
+[data-member="3"] { --mc: var(--m3); --mc-soft: var(--m3-soft); }
+[data-member="all"] { --mc: var(--all); --mc-soft: var(--all-soft); }
+.page[data-filter="1"] [data-member="2"], .page[data-filter="1"] [data-member="3"],
+.page[data-filter="2"] [data-member="1"], .page[data-filter="2"] [data-member="3"],
+.page[data-filter="3"] [data-member="1"], .page[data-filter="3"] [data-member="2"] { display: none; }
+
+/* masthead */
+.masthead { display: grid; gap: 12px; padding-bottom: 22px; }
+.eyebrow { font-size: 13px; letter-spacing: 0.08em; color: var(--muted); }
+.lede { font-size: 17px; color: var(--ink-2); max-width: 40em; }
+.meta { font-size: 14px; color: var(--muted); }
+.tally { display: flex; flex-wrap: wrap; gap: 8px 22px; padding: 0; margin: 4px 0 0; list-style: none; }
+.tally li { display: flex; align-items: baseline; gap: 6px; font-size: 14px; color: var(--ink-2); }
+.tally b { font-family: var(--font-mono); font-size: 22px; color: var(--ink); font-variant-numeric: tabular-nums; }
+
+/* toolbar */
+.toolbar {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20;
+  background: var(--bg); border-bottom: 1px solid var(--line);
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px 14px;
+  padding-block: 10px;
+}
+.seg, .tools { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
+button {
+  font: inherit; font-size: 14px; line-height: 1; min-height: 36px; padding: 0 14px;
+  border-radius: 999px; border: 1px solid var(--line); background: var(--paper); color: var(--ink);
+  cursor: pointer; display: inline-flex; align-items: center; gap: 6px;
+}
+button:hover { border-color: var(--muted); }
+.seg button[aria-pressed="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+button.primary { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); font-weight: 600; }
+button.quiet { background: transparent; border-color: transparent; color: var(--muted); padding: 0 6px; }
+button.quiet:hover { color: var(--ink); }
+.dot { width: 8px; height: 8px; border-radius: 50%; background: var(--mc); display: inline-block; }
+.progress { font-size: 14px; color: var(--ink-2); font-variant-numeric: tabular-nums; padding-inline: 4px; }
+
+.toc { display: flex; flex-wrap: wrap; gap: 4px 16px; padding-block: 14px 4px; font-size: 14px; }
+.toc a { color: var(--ink-2); text-decoration: none; border-bottom: 1px solid var(--line); }
+.toc a:hover { color: var(--ink); border-color: var(--ink); }
+
+/* sections */
+.sec { display: grid; gap: 16px; padding-block: 36px; border-top: 1px solid var(--line); scroll-margin-top: 150px; }
+.toc + .sec { border-top: 0; }
+.member-head { display: grid; gap: 8px; }
+.chip {
+  display: inline-flex; align-items: center; gap: 6px; justify-self: start;
+  font-size: 13px; font-weight: 600; line-height: 1.6; padding: 1px 10px; border-radius: 999px;
+  background: var(--mc-soft); color: var(--mc); white-space: nowrap;
+}
+.chip.m1 { --mc: var(--m1); --mc-soft: var(--m1-soft); }
+.chip.m2 { --mc: var(--m2); --mc-soft: var(--m2-soft); }
+.chip.m3 { --mc: var(--m3); --mc-soft: var(--m3-soft); }
+.small { font-size: 14px; color: var(--ink-2); }
+.grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 12px; }
+.box { background: var(--paper); border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; display: grid; gap: 6px; align-content: start; min-width: 0; }
+.box p { color: var(--ink-2); font-size: 15px; }
+.steps, .tips { margin: 0; padding-left: 1.3em; display: grid; gap: 8px; }
+.steps li::marker { color: var(--muted); font-family: var(--font-mono); }
+.note { background: var(--warn-soft); border-radius: 10px; padding: 14px 16px; display: grid; gap: 6px; }
+.note h4 { color: var(--warn); }
+.script { background: var(--paper); border: 1px solid var(--line); border-radius: 10px; padding: 18px 20px; display: grid; gap: 10px; font-size: 16.5px; }
+
+/* tables */
+.table-wrap { overflow-x: auto; min-width: 0; }
+table { border-collapse: collapse; width: 100%; font-size: 14.5px; }
+th, td { padding: 8px 10px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--line); }
+th { font-weight: 600; color: var(--ink-2); font-size: 13px; white-space: nowrap; }
+td.num { font-family: var(--font-mono); font-size: 13.5px; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.roles { min-width: 560px; }
+
+/* key numbers */
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 330px), 1fr)); gap: 14px; }
+.numcard { background: var(--paper); border: 1px solid var(--line); border-radius: 10px; padding: 16px; display: grid; gap: 10px; align-content: start; min-width: 0; }
+.numcard header { display: grid; gap: 2px; }
+.src { font-family: var(--font-mono); font-size: 12px; color: var(--muted); overflow-wrap: anywhere; }
+.numcard dl { display: grid; grid-template-columns: 7.6em 1fr; gap: 7px 12px; margin: 0; font-size: 14.5px; }
+.numcard dt { color: var(--muted); }
+.numcard dd { margin: 0; font-weight: 600; font-variant-numeric: tabular-nums; min-width: 0; }
+
+/* number chain */
+.chain { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px; }
+.chain .node { display: grid; justify-items: center; background: var(--paper); border: 1px solid var(--line); border-radius: 8px; padding: 6px 12px; }
+.chain .node b { font-family: var(--font-mono); font-size: 20px; font-variant-numeric: tabular-nums; }
+.chain .node span { font-size: 12px; color: var(--muted); line-height: 1.4; }
+.chain .edge { display: flex; align-items: center; gap: 6px; font-size: 13px; color: var(--ink-2); }
+.chain .edge::after { content: "→"; color: var(--mc); font-weight: 700; }
+
+/* array and input tables */
+.arr, .inp { border-collapse: collapse; font-family: var(--font-mono); font-size: 13px; font-variant-numeric: tabular-nums; width: auto; }
+.arr th, .arr td, .inp th, .inp td { padding: 3px 10px; text-align: right; border-bottom: 1px solid var(--line); white-space: nowrap; }
+.arr thead th, .inp thead th { font-family: var(--font-body); }
+.arr td.nan { color: var(--muted); font-style: italic; }
+.arr td.max { background: var(--m2-soft); color: var(--m2); font-weight: 600; }
+.arr td.hm, .arr th.hm { border-left: 1px solid var(--line); color: var(--ink-2); }
+.arr tfoot td, .arr tfoot th { border-top: 2px solid var(--line); border-bottom: 0; font-weight: 600; }
+.inp td.gap { color: var(--m3); font-style: italic; }
+.cap { font-size: 13px; color: var(--muted); padding-bottom: 6px; }
+.formula { background: var(--paper); border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; display: grid; gap: 8px; }
+.formula p { font-family: var(--font-mono); font-size: 14px; overflow-wrap: anywhere; }
+.formula span { font-family: var(--font-body); color: var(--muted); font-size: 13px; }
+
+/* code list */
+.codelist { list-style: none; padding: 0; margin: 0; display: grid; gap: 20px; counter-reset: c; }
+.codelist li { display: grid; gap: 8px; min-width: 0; counter-increment: c; }
+.where { font-size: 13.5px; color: var(--muted); }
+.where::before { content: counter(c); font-family: var(--font-mono); color: var(--mc); font-weight: 600; margin-right: 8px; }
+.codelist li > p:last-child { color: var(--ink-2); }
+
+/* questions */
+.qalist { display: grid; border-top: 1px solid var(--line); }
+.qa { border-bottom: 1px solid var(--line); scroll-margin-top: 170px; }
+.qa summary {
+  display: grid; grid-template-columns: 3.4em 1fr auto; gap: 10px; align-items: baseline;
+  padding: 12px 6px; cursor: pointer; list-style: none; border-radius: 6px; transition: background 0.3s;
+}
+.qa summary::-webkit-details-marker { display: none; }
+.qa summary:hover .qtext { color: var(--mc); }
+.qno { font-family: var(--font-mono); font-size: 12.5px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.qtext { font-weight: 600; }
+.mark { width: 18px; height: 18px; border-radius: 50%; border: 1.5px solid var(--line); align-self: center; display: grid; place-items: center; font-size: 11px; color: transparent; }
+.qa.done .mark { background: var(--mc); border-color: var(--mc); color: var(--paper); }
+.qa.done .mark::after { content: "✓"; }
+.qa.picked summary { background: var(--mc-soft); }
+.ans { padding: 0 6px 16px calc(3.4em + 16px); color: var(--ink-2); display: grid; gap: 10px; }
+.ans p { max-width: 42em; }
+.got { display: inline-flex; gap: 8px; align-items: center; font-size: 14px; color: var(--muted); cursor: pointer; justify-self: start; }
+.got input { width: 17px; height: 17px; accent-color: var(--mc); }
+
+/* drills */
+.drills { display: grid; gap: 14px; }
+.drill { background: var(--paper); border: 1px solid var(--line); border-radius: 10px; padding: 16px 18px; display: grid; gap: 12px; min-width: 0; }
+.drill dl { display: grid; grid-template-columns: 5.6em 1fr; gap: 8px 14px; margin: 0; }
+.drill dt { font-size: 13px; color: var(--muted); padding-top: 3px; }
+.drill dd { margin: 0; min-width: 0; display: grid; gap: 8px; }
+.drill .tag { font-family: var(--font-mono); font-size: 12px; color: var(--mc); }
+.res { border-collapse: collapse; font-size: 13.5px; }
+.res td { padding: 6px 8px; border-bottom: 1px solid var(--line); vertical-align: top; }
+.res td:first-child { font-family: var(--font-mono); font-size: 12.5px; color: var(--ink); }
+
+/* checks */
+.checks { display: grid; border-top: 1px solid var(--line); }
+.check { padding-block: 18px; border-bottom: 1px solid var(--line); display: grid; gap: 10px; min-width: 0; }
+.check-head { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px; }
+.check-head h3 { padding: 0; font-size: 17px; }
+.who { font-size: 13px; color: var(--muted); }
+.check ol { margin: 0; padding-left: 1.3em; display: grid; gap: 6px; }
+.check .expect { font-size: 14.5px; color: var(--ink-2); }
+
+.keys { display: flex; flex-wrap: wrap; gap: 8px 18px; padding: 0; margin: 0; list-style: none; font-size: 14.5px; }
+kbd { font-family: var(--font-mono); font-size: 12.5px; background: var(--paper); border: 1px solid var(--line); border-bottom-width: 2px; border-radius: 5px; padding: 1px 6px; }
+footer { padding-top: 28px; border-top: 1px solid var(--line); font-size: 13px; color: var(--muted); }
+
+@media (max-width: 560px) {
+  .toolbar { padding-block: 8px; gap: 8px; }
+  button { min-height: 34px; padding: 0 12px; font-size: 13.5px; }
+  .meta button.quiet { padding: 0 4px; }
+  .ans { padding-left: 6px; }
+  .drill { padding: 14px; }
+  .drill dl { grid-template-columns: 1fr; gap: 4px; }
+  .drill dt { padding-top: 8px; }
+  .numcard dl { grid-template-columns: 6.6em 1fr; }
+  .script { padding: 14px 16px; }
+}
+</style>
+
+</head>
+<body>
+<div class="page" id="page" data-filter="all">
+
+<header class="masthead">
+  <p class="eyebrow">Python科学计算期末大作业 · 校园自习室数据分析综合实践</p>
+  <h1>第9组答辩手册</h1>
+  <p class="lede">报告里已经写好了成员1、2、3的分工。每人吃透自己负责的两部分，再掌握“全组都要会”的内容。每道题先自己说一遍，再点开对照答案，答得上来就勾“我会了”。</p>
+  <ul class="tally">
+    <li><b id="n-qa">65</b>道问答</li>
+    <li><b id="n-drill">12</b>个现场改代码演练</li>
+    <li><b id="n-check">5</b>项交叉核验</li>
+  </ul>
+  <p class="meta">所有数字都来自本组 project.ipynb 的运行结果（group_id = 9）。勾选记录只保存在你自己的浏览器里。<button type="button" id="btn-reset" class="quiet">清空勾选</button></p>
+</header>
+
+<div class="toolbar">
+  <div class="seg" role="group" aria-label="只看某位成员的内容">
+    <button type="button" data-f="all" aria-pressed="true">全部</button>
+    <button type="button" data-f="1" data-member="1" aria-pressed="false"><span class="dot"></span>成员1</button>
+    <button type="button" data-f="2" data-member="2" aria-pressed="false"><span class="dot"></span>成员2</button>
+    <button type="button" data-f="3" data-member="3" aria-pressed="false"><span class="dot"></span>成员3</button>
+  </div>
+  <div class="tools">
+    <button type="button" id="btn-random" class="primary">随机抽一题</button>
+    <button type="button" id="btn-expand" aria-pressed="false">展开答案</button>
+    <span class="progress" id="progress" aria-live="polite">已掌握 0 / 65</span>
+  </div>
+</div>
+
+<nav class="toc" aria-label="目录">
+  <a href="#plan">准备策略</a>
+  <a href="#intro">一分钟介绍</a>
+  <a href="#numbers">关键数字</a>
+  <a href="#m1" data-member="1">成员1 部分</a>
+  <a href="#m2" data-member="2">成员2 部分</a>
+  <a href="#m3" data-member="3">成员3 部分</a>
+  <a href="#checks">交叉核验</a>
+  <a href="#ops">现场操作</a>
+  <a href="#team">全组问答</a>
+</nav>
+
+<!-- ============ 准备策略 ============ -->
+<section class="sec" id="plan" data-member="all">
+  <h2>先看这里：怎么准备</h2>
+  <p>任务书没有写答辩细则。这类答辩，老师最常用下面四种问法，手册就按这四种来准备。</p>
+  <div class="grid2">
+    <div class="box"><h4>问数字从哪来</h4><p>“B室使用率54.9%是怎么算的？”答出计算方法，并说出它在哪个文件里。</p></div>
+    <div class="box"><h4>问方法原理</h4><p>“为什么用PCHIP？梯形积分为什么要传x？”用一两句大白话讲清楚。</p></div>
+    <div class="box"><h4>现场改代码</h4><p>“把目标浓度改成700再算一次。”知道改哪一行、运行哪一格、结果应该是多少。</p></div>
+    <div class="box"><h4>问分工和核验</h4><p>“你负责哪部分？你核验了谁的哪一步？”每人都要能讲自己亲手做过的核验。</p></div>
+  </div>
+
+  <h3>三个人怎么分</h3>
+  <div class="table-wrap">
+    <table class="roles">
+      <thead><tr><th>角色</th><th>负责</th><th>分值</th><th>答辩时必须讲清楚</th></tr></thead>
+      <tbody>
+        <tr><td><span class="chip m1">成员1（组长）</span></td><td>任务一 清洗与合并<br>任务六 报告与提交</td><td class="num">20 + 10</td><td>1187 → 1168 这条数字链；每条清洗规则为什么这样定；合并为什么不改变行数；三条建议</td></tr>
+        <tr><td><span class="chip m2">成员2</span></td><td>任务二 NumPy数组<br>任务三 统计与四幅图</td><td class="num">15 + 25</td><td>axis 0 和 axis 1；nan函数；每幅图一句带数字的结论；为什么看使用率而不看人数</td></tr>
+        <tr><td><span class="chip m3">成员3</span></td><td>任务四 插值与积分<br>任务五 拟合与求根</td><td class="num">15 + 15</td><td>PCHIP和线性插值的区别；积分单位ppm·h；curve_fit和RMSE；brentq为什么要两端异号；为什么选B档</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>报告和Notebook里只写了“成员1/2/3”，姓名还没填，所以现在还可以按各人特点分配：数学最好的当成员3；细心、会用Excel的当成员1；表达最好的当成员2，图表都在这部分，也适合做开场介绍。</p>
+
+  <h3>时间安排</h3>
+  <div class="grid2">
+    <div class="box">
+      <h4>有三个晚上</h4>
+      <ol class="steps">
+        <li><b>第一晚，约2.5小时。</b>每人只看自己的部分：先读“这部分在做什么”，再打开Notebook对照“必须会讲的代码”逐行看，最后不看答案，把自己的问答说一遍。</li>
+        <li><b>第二晚，约2小时。</b>先各自亲手做“交叉核验”里自己名下的那几项，再三人互相抽问：一人念题，一人回答，第三人对照答案。</li>
+        <li><b>第三晚，约1.5小时。</b>每人做两个“现场改代码”演练；三人都背熟“一分钟介绍”和关键数字；在答辩要用的电脑上从头运行一遍。</li>
+      </ol>
+    </div>
+    <div class="box">
+      <h4>只剩一个晚上</h4>
+      <ol class="steps">
+        <li><b>30分钟。</b>三人一起背“一分钟介绍”和关键数字。</li>
+        <li><b>60分钟。</b>每人只练自己部分的前6道题，再做1个现场改代码。</li>
+        <li><b>30分钟。</b>每人做一项交叉核验，最后在答辩用的电脑上从头运行一遍。</li>
+      </ol>
+    </div>
+  </div>
+
+  <h3>回答时怎么说</h3>
+  <ul class="tips">
+    <li>先说结论，再说依据和出处：“B室平均使用率最高，54.9%，在 outputs/room_summary.csv 里。”</li>
+    <li>讲代码只讲三件事：输入是什么，做了什么，得到什么。不用背代码。</li>
+    <li>不会的不要编。可以说“这部分是成员3做的，我理解的是……”，或者“我在代码里找一下”，然后按 <kbd>Ctrl</kbd>+<kbd>F</kbd> 搜关键词。</li>
+    <li>记不准的数字就打开输出文件念，总比凭印象说错强。</li>
+  </ul>
+  <aside class="note">
+    <h4>如果被问到是不是用了AI</h4>
+    <p>任务书里没有关于AI的规定；老师课上如果另有要求，以老师说的为准。被问到就如实说用了AI辅助，再讲清楚你们自己核对过什么、弄懂了什么。现场编一个说法，被追问两句就会露馅，比如实说糟得多。</p>
+  </aside>
+</section>
+
+<!-- ============ 一分钟介绍 ============ -->
+<section class="sec" id="intro" data-member="all">
+  <h2>一分钟项目介绍</h2>
+  <p>开场时，或者老师说“简单介绍一下你们做了什么”时用。三个人都要能说，大约一分钟。</p>
+  <div class="script">
+    <p>我们是第9组。我们用老师给的生成代码，按组号9生成了A到D四间自习室21天、每天8点到21点的模拟数据，原始观测文件1187行。</p>
+    <p>任务一清洗数据：去空格、统一大小写、去掉湿度的百分号；8条时间或房间编号无效的记录单独存出来，删掉6条完全重复和5条同房间同时刻的重复，16个越界数值设为缺失，最后剩1168条，再合并房间资料和每日安排，算出使用率。</p>
+    <p>任务二用NumPy把11月2日的使用率整理成14行4列的数组，用nan函数统计，最高是15点D室，0.98。</p>
+    <p>任务三按房间、时段、工作日和周末做统计，画了四幅图：B室的人数和使用率都最高，四间房都是下午最忙、15点最高，使用率和CO2浓度的相关系数是0.904。</p>
+    <p>任务四用PCHIP插值估计A室11月12日缺失的15点浓度，再用梯形积分算出12点到18点的平均浓度约1035 ppm。</p>
+    <p>任务五用curve_fit拟合两档通风的衰减系数，用brentq求浓度降到800 ppm的时间：B档16分钟、0.480千瓦时，比A档省电，所以选B档。</p>
+    <p>最后提了三条建议：B室下午加强通风，15点前后按使用率分流，周末上午只开B、D两室。</p>
+  </div>
+</section>
+
+<!-- ============ 关键数字 ============ -->
+<section class="sec" id="numbers" data-member="all">
+  <h2>关键数字</h2>
+  <p>三人都要看几遍。被问到具体数字时，说出它在哪个文件里，能当场打开最好。</p>
+  <div class="cards">
+    <article class="numcard">
+      <header><h4>数据清洗</h4><span class="src">data/data_quality.csv</span></header>
+      <dl>
+        <dt>原始观测行数</dt><dd>1187（= 1176 + 6 + 5）</dd>
+        <dt>无效记录</dt><dd>8条：时间5、房间为空1、E或Z 2</dd>
+        <dt>完全重复 / 组合重复</dt><dd>6条 / 5条</dd>
+        <dt>越界设为缺失</dt><dd>16个值，四列各4个</dd>
+        <dt>清洗后记录</dt><dd>1168条，比1176少8个时点</dd>
+        <dt>合并前后行数</dt><dd>1168 → 1168</dd>
+      </dl>
+    </article>
+    <article class="numcard">
+      <header><h4>NumPy数组</h4><span class="src">outputs/numpy_summary.csv</span></header>
+      <dl>
+        <dt>选用日期</dt><dd>2026-11-02（周一）</dd>
+        <dt>数组</dt><dd>(14, 4)，float64，2个NaN</dd>
+        <dt>各室当天平均</dt><dd>A 0.559 · B 0.642 · C 0.531 · D 0.588</dd>
+        <dt>最大值</dt><dd>0.9821，15时D室（55/56）</dd>
+        <dt>15时四室平均</dt><dd>0.9132，与手算一致</dd>
+      </dl>
+    </article>
+    <article class="numcard">
+      <header><h4>统计与四幅图</h4><span class="src">outputs/room_summary.csv 等</span></header>
+      <dl>
+        <dt>B室人数 / 使用率</dt><dd>35.16人 / 54.9%，都最高</dd>
+        <dt>使用率排名</dt><dd>B &gt; D &gt; A &gt; C</dd>
+        <dt>B室比C室</dt><dd>座位1.60倍，人数2.08倍，使用率1.30倍</dd>
+        <dt>B室下午使用率</dt><dd>77.9%</dd>
+        <dt>工作日 / 周末</dt><dd>53.9% / 37.0%，约0.69倍</dd>
+        <dt>浓度高于1000</dt><dd>383/1146 = 33.4%（B 53.4%，C 9.1%）</dd>
+        <dt>相关系数</dt><dd>r = 0.904</dd>
+      </dl>
+    </article>
+    <article class="numcard">
+      <header><h4>插值与积分</h4><span class="src">outputs/interpolation_integration_result.csv</span></header>
+      <dl>
+        <dt>选用组合</dt><dd>A室 2026-11-12，15时原始320 ppm → 缺失</dd>
+        <dt>15时补值</dt><dd>PCHIP 1090.0，线性 1086.2 ppm</dd>
+        <dt>14:30估计</dt><dd>PCHIP 1085.05，线性 1082.25 ppm</dd>
+        <dt>12—18时面积</dt><dd>6212.90 ppm·h</dd>
+        <dt>时间平均浓度</dt><dd>1035.48 ppm</dd>
+        <dt>高于1000的面积</dt><dd>283.92 ppm·h</dd>
+      </dl>
+    </article>
+    <article class="numcard">
+      <header><h4>拟合与求根</h4><span class="src">outputs/fit_root_result.csv</span></header>
+      <dl>
+        <dt>给定条件</dt><dd>C_bg 438，C0 1665，目标800 ppm，deadline 35 min</dd>
+        <dt>k（1/min）</dt><dd>A 0.04536，B 0.07752</dd>
+        <dt>RMSE</dt><dd>A 21.95，B 20.88 ppm</dd>
+        <dt>首次达标</dt><dd>A 26.91 → 27 min；B 15.75 → 16 min</dd>
+        <dt>预计能耗</dt><dd>A 0.495，B 0.480 kWh → 选B档</dd>
+      </dl>
+    </article>
+    <article class="numcard">
+      <header><h4>三条建议的依据</h4><span class="src">报告第六节 · Notebook任务六</span></header>
+      <dl>
+        <dt>B室下午</dt><dd>使用率77.9%，浓度1151.8 ppm，88.6%高于1000（109/123）</dd>
+        <dt>15时分流</dt><dd>15时平均使用率79.5%；B室约剩8.3个空座，C室约12.6个</dd>
+        <dt>周末上午</dt><dd>使用率22.7%（工作日33.0%）；四室合计最多80人，B、D共120座</dd>
+      </dl>
+    </article>
+  </div>
+</section>
+
+<!-- ============ 成员1 ============ -->
+<section class="sec member" id="m1" data-member="1">
+  <div class="member-head">
+    <span class="chip">成员1（组长）</span>
+    <h2>任务一 清洗与合并 · 任务六 报告与提交</h2>
+  </div>
+  <h3>这部分在做什么</h3>
+  <p>读入三张CSV，先检查问题；再按任务书的规则清洗：去空格、统一小写、转换类型、把无效记录另存、去重、越界值设为缺失；最后合并房间资料和每日安排，算出使用率，保存 clean_observations.csv 和 data_quality.csv。报告统稿和提交前的从头运行检查也归你。</p>
+  <div class="chain" role="img" aria-label="1187行原始数据，去掉8条无效记录得1179，去掉6条完全重复得1173，去掉5条同房间同时刻重复得1168，两次左连接后仍是1168">
+    <div class="node"><b>1187</b><span>原始行数</span></div>
+    <div class="edge">−8 无效记录</div>
+    <div class="node"><b>1179</b></div>
+    <div class="edge">−6 完全重复</div>
+    <div class="node"><b>1173</b></div>
+    <div class="edge">−5 同房间同时刻</div>
+    <div class="node"><b>1168</b><span>清洗后</span></div>
+    <div class="edge">两次左连接</div>
+    <div class="node"><b>1168</b><span>合并后</span></div>
+  </div>
+  <p class="small">1168 + 8 = 1176：缺的8个时点，正好是那8条无效记录原本所在的时点。没有补造记录。</p>
+
+  <h3>必须会讲的代码</h3>
+  <ol class="codelist">
+    <li>
+      <p class="where">1.1 读取三张CSV</p>
+      <pre><code>sensor_raw = pd.read_csv(sensor_path, encoding="utf-8-sig")</code></pre>
+      <p>读入原始观测表。utf-8-sig 能处理带BOM的UTF-8文件，中文不乱码，第一列列名前也不会多出看不见的字符。后面的结果都另存新文件，原始CSV只读不写。</p>
+    </li>
+    <li>
+      <p class="where">1.1 检查重复</p>
+      <pre><code>sensor_raw.duplicated().sum()                                  # 6
+sensor_raw.duplicated(subset=["room_id", "timestamp"]).sum()   # 11</code></pre>
+      <p>第一行要求整行完全相同才算重复；第二行只看房间和时间。11条里包含那6条完全重复，另外5条是房间时间相同、浓度不同的K09记录。</p>
+    </li>
+    <li>
+      <p class="where">1.2 字段清洗</p>
+      <pre><code>sensor["room_id"] = sensor["room_id"].str.strip()
+sensor["ventilation"] = sensor["ventilation"].str.strip().str.lower()</code></pre>
+      <p>str.strip() 去掉两端空格，“ A ”变成“A”；str.lower() 转小写，“ ON ”变成“on”。</p>
+    </li>
+    <li>
+      <p class="where">1.2 时间转换</p>
+      <pre><code>sensor["timestamp"] = pd.to_datetime(sensor["timestamp"], format="%Y-%m-%d %H:%M:%S", errors="coerce")</code></pre>
+      <p>按固定格式解析时间。errors="coerce" 表示解析不了的不报错，而是变成NaT（时间类型的缺失），比如“2026-99-99 10:00:00”和“not-a-time”。</p>
+    </li>
+    <li>
+      <p class="where">1.2 湿度去掉百分号</p>
+      <pre><code>sensor["humidity_pct"] = pd.to_numeric(humidity_text.str.replace("%", "", regex=False), errors="coerce")</code></pre>
+      <p>先把“48%”里的%删掉，再转成数字48。</p>
+    </li>
+    <li>
+      <p class="where">1.3 无效记录</p>
+      <pre><code>invalid_mask = bad_time | room_empty | room_other</code></pre>
+      <p>三个条件“或”起来：时间是NaT、房间编号为空、房间编号不是A—D，满足任意一个就是无效记录。| 是“或”，&amp; 是“且”，~ 是“取反”。这8条存进 invalid_records.csv 后剔除。</p>
+    </li>
+    <li>
+      <p class="where">1.3 组合重复保留最先出现的</p>
+      <pre><code>work = work.sort_values("source_row")
+key_mask = work.duplicated(subset=["room_id", "timestamp"], keep="first")</code></pre>
+      <p>source_row 是清洗前记下的原文件行号。先按它排序，再用 keep="first" 把后出现的标成重复删掉，留下的就是原文件里最先出现的那条。</p>
+    </li>
+    <li>
+      <p class="where">1.3 范围检查</p>
+      <pre><code>"co2_ppm": (work["co2_ppm"] &lt; 400) | (work["co2_ppm"] &gt; 2500),
+...
+work.loc[mask, col] = np.nan</code></pre>
+      <p>超出规定范围的数值改成NaN，整行保留，因为同一行的其他字段可能还是有效的。</p>
+    </li>
+    <li>
+      <p class="where">1.4 合并</p>
+      <pre><code>merged = work.merge(room_info, on="room_id", how="left", validate="many_to_one", indicator="merge_room")</code></pre>
+      <p>左连接：观测表每一行都保留，再到房间资料里找对应的座位数等信息。validate="many_to_one" 要求右表的键唯一，否则直接报错；indicator 标记每行有没有匹配上，用来数未匹配记录。第二次合并按 date + room_id 接上每日安排。</p>
+    </li>
+    <li>
+      <p class="where">1.5 使用率</p>
+      <pre><code>merged["seat_rate"] = merged["student_count"] / merged["capacity"]  # 0—1小数</code></pre>
+      <p>使用率 = 人数 ÷ 座位数，保存为0—1的小数；人数缺失的，使用率也是NaN。</p>
+    </li>
+  </ol>
+
+  <h3>常见问答</h3>
+  <div class="qalist">
+    <details class="qa" id="q1-01" data-member="1"><summary><span class="qno">1-01</span><span class="qtext">原始数据有哪些问题？分别怎么处理的？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>七类。房间编号两端有空格10个，去空格；通风状态有空格或大写12个，去空格并转小写；湿度带“%”12个，去掉后转成数字；时间无法解析5条、房间编号为空1条、编号是E或Z的2条，共8条存进 invalid_records.csv 后剔除；完全重复6条，删除；同房间同时刻重复5条，保留原文件中先出现的；越界数值16个，设为缺失，记录保留。</p><label class="got"><input type="checkbox" id="got-q1-01" data-q="q1-01">我会了</label></div></details>
+    <details class="qa" id="q1-02" data-member="1"><summary><span class="qno">1-02</span><span class="qtext">1187行是怎么来的？清洗后为什么是1168？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>理论上21天 × 14小时 × 4间房 = 1176个时点，生成时又加了6条完全重复和5条组合重复，1176 + 6 + 5 = 1187。清洗时去掉8条无效、6条完全重复、5条组合重复：1187 − 8 − 6 − 5 = 1168。</p><label class="got"><input type="checkbox" id="got-q1-02" data-q="q1-02">我会了</label></div></details>
+    <details class="qa" id="q1-03" data-member="1"><summary><span class="qno">1-03</span><span class="qtext">为什么比1176少8个时点？要不要补上？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>少的8个时点，正好是那8条无效记录原本对应的时点：它们的时间或房间编号坏了，没法确定属于哪个时点。我们没有补造，因为补出来的不是观测值，任务书也没有要求补。Notebook 1.5节列出了这8个时点。</p><label class="got"><input type="checkbox" id="got-q1-03" data-q="q1-03">我会了</label></div></details>
+    <details class="qa" id="q1-04" data-member="1"><summary><span class="qno">1-04</span><span class="qtext">越界的数值为什么设为缺失，而不是删掉整行？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>一行里通常只有一个字段越界，比如人数是999，但同一行的浓度、温度还是正常的。删整行会把有效数据一起丢掉。任务书也要求“不符合规定范围的数值设为缺失”。</p><label class="got"><input type="checkbox" id="got-q1-04" data-q="q1-04">我会了</label></div></details>
+    <details class="qa" id="q1-05" data-member="1"><summary><span class="qno">1-05</span><span class="qtext">原始检查时组合重复是11条，为什么最后只删了5条？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>组合重复只看房间和时间，6条完全重复当然也算在里面，所以是11。先删了6条完全重复，剩下的5条是K09001到K09005：房间和时间与原记录相同，但浓度都高55 ppm，按规则保留先出现的原记录。</p><label class="got"><input type="checkbox" id="got-q1-05" data-q="q1-05">我会了</label></div></details>
+    <details class="qa" id="q1-06" data-member="1"><summary><span class="qno">1-06</span><span class="qtext">“保留原文件中最先出现的一条”是怎么保证的？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>清洗前加了一列 source_row，记下每行在原文件里的行号。去重前按它排序，再用 duplicated(keep="first")，后出现的就被标成重复。K09那5条在文件末尾，所以删掉的是它们。</p><label class="got"><input type="checkbox" id="got-q1-06" data-q="q1-06">我会了</label></div></details>
+    <details class="qa" id="q1-07" data-member="1"><summary><span class="qno">1-07</span><span class="qtext">errors="coerce" 是什么意思？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>转换失败时不报错，而是变成缺失：时间变NaT，数字变NaN。这样坏数据不会让程序中断，之后再统一找出来处理。本组时间无法解析的有5条。</p><label class="got"><input type="checkbox" id="got-q1-07" data-q="q1-07">我会了</label></div></details>
+    <details class="qa" id="q1-08" data-member="1"><summary><span class="qno">1-08</span><span class="qtext">湿度的“48%”是怎么变成48的？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>先转成文本、去掉两端空格，再用 str.replace 把“%”删掉，最后用 pd.to_numeric 转成数字。这样的值有12个。</p><label class="got"><input type="checkbox" id="got-q1-08" data-q="q1-08">我会了</label></div></details>
+    <details class="qa" id="q1-09" data-member="1"><summary><span class="qno">1-09</span><span class="qtext">无效记录的判断条件是什么？代码里的 | 和 ~ 是什么？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>时间无法解析，或房间编号为空，或房间编号不属于A—D，满足任意一个就算无效。| 表示“或”，&amp; 表示“且”，~ 表示“取反”，比如 ~room_empty 就是“房间编号不为空”。</p><label class="got"><input type="checkbox" id="got-q1-09" data-q="q1-09">我会了</label></div></details>
+    <details class="qa" id="q1-10" data-member="1"><summary><span class="qno">1-10</span><span class="qtext">合并为什么用左连接？怎么确认合并没出错？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>观测表是主表，每条观测都要保留，所以用左连接。检查了三件事：右表的键唯一（room_info 的 room_id、daily_schedule 的 date + room_id 都没有重复）；合并前后都是1168行；用 indicator 统计未匹配的记录，是0条。</p><label class="got"><input type="checkbox" id="got-q1-10" data-q="q1-10">我会了</label></div></details>
+    <details class="qa" id="q1-11" data-member="1"><summary><span class="qno">1-11</span><span class="qtext">如果右表的连接键不唯一会怎样？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>一条观测会匹配到右表的多行，合并后行数变多，同一条数据被重复统计。所以要先检查键唯一，再对比合并前后的行数。validate="many_to_one" 遇到这种情况会直接报错。</p><label class="got"><input type="checkbox" id="got-q1-11" data-q="q1-11">我会了</label></div></details>
+    <details class="qa" id="q1-12" data-member="1"><summary><span class="qno">1-12</span><span class="qtext">清洗后人数为什么缺14个？其他几列呢？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>原始缺失10个，加上越界设为缺失的4个（999、−1、−3、999），10 + 4 = 14。浓度18 + 4 = 22，温度9 + 4 = 13，湿度12 + 4 = 16。使用率跟着人数走，也缺14个。</p><label class="got"><input type="checkbox" id="got-q1-12" data-q="q1-12">我会了</label></div></details>
+    <details class="qa" id="q1-13" data-member="1"><summary><span class="qno">1-13</span><span class="qtext">encoding="utf-8-sig" 是什么？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>带BOM的UTF-8编码。读写都用它，Excel打开中文不会乱码，第一列列名前也不会多出看不见的字符。</p><label class="got"><input type="checkbox" id="got-q1-13" data-q="q1-13">我会了</label></div></details>
+    <details class="qa" id="q1-14" data-member="1"><summary><span class="qno">1-14</span><span class="qtext">怎么证明原始CSV没被覆盖？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>代码只读原始CSV，结果都存成新文件。另外，数据生成后马上算了四个原始文件的MD5，最后一格再算一次，两次一致。MD5可以理解成文件的“指纹”，内容改一个字节，指纹就会变。</p><label class="got"><input type="checkbox" id="got-q1-14" data-q="q1-14">我会了</label></div></details>
+    <details class="qa" id="q1-15" data-member="1"><summary><span class="qno">1-15</span><span class="qtext">data_quality.csv 里记了什么？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>每一步检查和处理的数量，共32行，按读取检查、字段清洗、无效记录、重复记录、范围检查、合并、最终结果分步记录。每行写了步骤、检查项目、数量和处理方式。</p><label class="got"><input type="checkbox" id="got-q1-15" data-q="q1-15">我会了</label></div></details>
+    <details class="qa" id="q1-16" data-member="1"><summary><span class="qno">1-16</span><span class="qtext">相对路径是什么？为什么要用？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>路径从Notebook所在的文件夹算起，例如 project_root / "data" / "room_info.csv"。整个文件夹拷到别的电脑上也能直接运行，不依赖“C:\Users\……”这种只有自己电脑才有的路径。</p><label class="got"><input type="checkbox" id="got-q1-16" data-q="q1-16">我会了</label></div></details>
+  </div>
+
+  <h3>现场改代码</h3>
+  <div class="drills">
+    <article class="drill" data-member="1">
+      <h4>现场查数据</h4>
+      <dl>
+        <dt>老师可能说</dt><dd>“现场查一下每间房有几条记录。”“R0568 这条原始记录是什么样？”</dd>
+        <dt>怎么做</dt><dd><p>在1.5节代码格下面新建一格（先按 <kbd>Esc</kbd>，再按 <kbd>B</kbd>），输入下面任意一行，按 <kbd>Shift</kbd>+<kbd>Enter</kbd> 运行。演示完删掉这一格（<kbd>Esc</kbd> 后连按两下 <kbd>D</kbd>）。</p></dd>
+        <dt>应该看到</dt><dd>
+          <div class="table-wrap"><table class="res">
+            <tr><td>clean["room_id"].value_counts().sort_index()</td><td>A 294，B 290，C 292，D 292</td></tr>
+            <tr><td>sensor_raw[sensor_raw["record_id"] == "R0568"]</td><td>A室，2026-11-12 15:00:00，39人，浓度320.0（任务四那个被设为缺失的值）</td></tr>
+            <tr><td>invalid_records["invalid_reason"].value_counts()</td><td>时间无法解析5，房间编号不属于A至D 2，房间编号为空1</td></tr>
+            <tr><td>clean.isna().sum()</td><td>student_count 14，seat_rate 14，co2_ppm 22，temperature_c 13，humidity_pct 16，其余为0</td></tr>
+          </table></div>
+        </dd>
+        <dt>注意</dt><dd>这几行只读数据，不会改任何文件。</dd>
+      </dl>
+    </article>
+    <article class="drill" data-member="1">
+      <h4>重启内核，从头运行</h4>
+      <dl>
+        <dt>老师可能说</dt><dd>“重启一下，从头运行一遍给我看。”</dd>
+        <dt>怎么做</dt><dd>JupyterLab：Kernel → Restart Kernel and Run All Cells；经典Notebook：Kernel → Restart &amp; Run All；VS Code：先点 Restart，再点 Run All。</dd>
+        <dt>应该看到</dt><dd>29个代码格依次运行，没有红色报错。最后一格打印“缺少的文件：无”和“原始CSV未被覆盖（MD5与生成时一致）： True”，六幅图都是200 dpi。</dd>
+        <dt>注意</dt><dd>通常不到一分钟。答辩前一天一定要在答辩用的电脑上先跑一次。</dd>
+      </dl>
+    </article>
+  </div>
+</section>
+
+<!-- ============ 成员2 ============ -->
+<section class="sec member" id="m2" data-member="2">
+  <div class="member-head">
+    <span class="chip">成员2</span>
+    <h2>任务二 NumPy数组 · 任务三 统计与四幅图</h2>
+  </div>
+  <h3>这部分在做什么</h3>
+  <p>任务二：选一个四间房记录齐全的日期（11月2日），把使用率排成14行（小时）× 4列（房间）的数组，用nan函数求每间房的平均、每小时的平均、最大值和位置，再手算核对一个小时。任务三：按房间、时段、工作日和周末做汇总表，做房间 × 小时的透视表，画四幅图，每幅图写一两句带数字的结论，并回到原数据核对。</p>
+
+  <div class="table-wrap">
+    <p class="cap">rate_array（11月2日）：行是 axis 0（小时），列是 axis 1（房间）。右边一列是 axis=1 的平均，最下面一行是 axis=0 的平均。</p>
+    <table class="arr">
+      <thead><tr><th>小时</th><th>A</th><th>B</th><th>C</th><th>D</th><th class="hm">每小时平均</th></tr></thead>
+      <tbody>
+        <tr><th>8</th><td>0.1875</td><td>0.1719</td><td class="nan">NaN</td><td>0.1964</td><td class="hm">0.1853</td></tr>
+        <tr><th>9</th><td>0.2083</td><td>0.3438</td><td>0.2750</td><td>0.2857</td><td class="hm">0.2782</td></tr>
+        <tr><th>10</th><td>0.3750</td><td>0.5000</td><td>0.3750</td><td>0.4286</td><td class="hm">0.4196</td></tr>
+        <tr><th>11</th><td>0.5000</td><td>0.5781</td><td>0.5000</td><td>0.6071</td><td class="hm">0.5463</td></tr>
+        <tr><th>12</th><td class="nan">NaN</td><td>0.7812</td><td>0.6500</td><td>0.7500</td><td class="hm">0.7271</td></tr>
+        <tr><th>13</th><td>0.7917</td><td>0.9375</td><td>0.6500</td><td>0.7679</td><td class="hm">0.7868</td></tr>
+        <tr><th>14</th><td>0.9167</td><td>0.9688</td><td>0.7750</td><td>0.9107</td><td class="hm">0.8928</td></tr>
+        <tr><th>15</th><td>0.9583</td><td>0.9375</td><td>0.7750</td><td class="max">0.9821</td><td class="hm">0.9132</td></tr>
+        <tr><th>16</th><td>0.8958</td><td>0.9688</td><td>0.7500</td><td>0.9107</td><td class="hm">0.8813</td></tr>
+        <tr><th>17</th><td>0.7708</td><td>0.8906</td><td>0.5750</td><td>0.7143</td><td class="hm">0.7377</td></tr>
+        <tr><th>18</th><td>0.5625</td><td>0.6875</td><td>0.5500</td><td>0.6429</td><td class="hm">0.6107</td></tr>
+        <tr><th>19</th><td>0.5000</td><td>0.5781</td><td>0.5000</td><td>0.4464</td><td class="hm">0.5061</td></tr>
+        <tr><th>20</th><td>0.3750</td><td>0.3750</td><td>0.2750</td><td>0.3750</td><td class="hm">0.3500</td></tr>
+        <tr><th>21</th><td>0.2292</td><td>0.2656</td><td>0.2500</td><td>0.2143</td><td class="hm">0.2398</td></tr>
+      </tbody>
+      <tfoot><tr><th>每室平均</th><td>0.5593</td><td>0.6417</td><td>0.5308</td><td>0.5880</td><td class="hm">0.5812</td></tr></tfoot>
+    </table>
+  </div>
+
+  <h3>必须会讲的代码</h3>
+  <ol class="codelist">
+    <li>
+      <p class="where">2.1 选日期</p>
+      <pre><code>records_per_date = clean.groupby("date").size()
+complete_dates = records_per_date[records_per_date == len(hours) * len(rooms)].index
+selected_date = complete_dates[0]</code></pre>
+      <p>每天应有14 × 4 = 56条记录。正好56条的日期共14天，取第一个，就是11月2日。</p>
+    </li>
+    <li>
+      <p class="where">2.1 长表变数组</p>
+      <pre><code>day_table = (clean[clean["date"] == selected_date]
+             .pivot(index="hour", columns="room_id", values="seat_rate")
+             .reindex(index=hours, columns=rooms))
+rate_array = day_table.to_numpy(dtype=float)</code></pre>
+      <p>pivot 把“一行一条记录”变成“行是小时、列是房间”；reindex 固定成8—21时和A、B、C、D的顺序；to_numpy 变成NumPy数组，形状(14, 4)，类型float64。</p>
+    </li>
+    <li>
+      <p class="where">2.2 按轴统计</p>
+      <pre><code>room_mean = np.nanmean(rate_array, axis=0)   # 4个数：每间房当天平均
+hour_mean = np.nanmean(rate_array, axis=1)   # 14个数：每小时四室平均</code></pre>
+      <p>对照上面的表：axis=0 沿着列往下算，每列得一个数；axis=1 沿着行往右算，每行得一个数。nanmean 计算时跳过NaN。</p>
+    </li>
+    <li>
+      <p class="where">2.2 最大值位置</p>
+      <pre><code>max_i, max_j = np.unravel_index(np.nanargmax(rate_array), rate_array.shape)</code></pre>
+      <p>nanargmax 返回把数组拉成一行后的序号31；unravel_index 按形状(14, 4)换算成第7行第3列（31 = 7 × 4 + 3），也就是15时D室。</p>
+    </li>
+    <li>
+      <p class="where">3.1 按房间汇总</p>
+      <pre><code>room_summary = (analysis.groupby("room_id")
+                .agg(n_valid_co2=("co2_ppm", "count"),
+                     mean_seat_rate=("seat_rate", "mean"),
+                     n_co2_gt_1000=("co2_gt_1000", "sum"), ...))</code></pre>
+      <p>按房间分组，一次算多个统计量。count 只数非缺失值；对True/False求和，就是数有几个True。</p>
+    </li>
+    <li>
+      <p class="where">3.2 划分时段</p>
+      <pre><code>analysis["period"] = np.select(period_conditions, period_order, default="其他")</code></pre>
+      <p>三个条件依次对应“上午、下午、晚间”，满足哪个就贴哪个标签。后面用 assert 确认没有“其他”。</p>
+    </li>
+    <li>
+      <p class="where">3.3 透视表</p>
+      <pre><code>pivot_rate = (analysis.pivot_table(index="room_id", columns="hour", values="seat_rate", aggfunc="mean")
+              .reindex(index=rooms, columns=hours))</code></pre>
+      <p>每一格是某间房某个小时21天的平均使用率；reindex 固定显示A—D室和8—21时。</p>
+    </li>
+    <li>
+      <p class="where">3.4 画图与保存</p>
+      <pre><code>ax = hourly_co2.rename(columns=lambda r: f"{r}室").plot(kind="line", marker="o", ...)   # 图1：Pandas接口
+hist_counts, hist_edges, _ = ax.hist(co2_valid, bins=bins, ...)                        # 图3：Matplotlib
+fig.savefig(figure_dir / "fig1_room_hourly_co2_line.png", dpi=FIG_DPI, bbox_inches="tight")</code></pre>
+      <p>图1、图2用 DataFrame.plot，图3、图4用 Matplotlib 的 ax.hist 和 ax.scatter。FIG_DPI = 200。</p>
+    </li>
+    <li>
+      <p class="where">3.4 相关系数</p>
+      <pre><code>corr_all = scatter_data["seat_rate"].corr(scatter_data["co2_ppm"])</code></pre>
+      <p>Pearson相关系数，四室合计1132个点，r = 0.904。</p>
+    </li>
+    <li>
+      <p class="where">3.5 回查</p>
+      <pre><code>check_clean = pd.read_csv(data_dir / "clean_observations.csv", encoding="utf-8-sig")</code></pre>
+      <p>从保存好的文件重新读入，独立再算一遍图上的数，和图对照。</p>
+    </li>
+  </ol>
+
+  <h3>常见问答</h3>
+  <div class="qalist">
+    <details class="qa" id="q2-01" data-member="2"><summary><span class="qno">2-01</span><span class="qtext">为什么选11月2日？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>规则是“四间房56个时点都有记录的第一个日期”。符合的日期共14天，11月2日（周一）是第一个。</p><label class="got"><input type="checkbox" id="got-q2-01" data-q="q2-01">我会了</label></div></details>
+    <details class="qa" id="q2-02" data-member="2"><summary><span class="qno">2-02</span><span class="qtext">数组的形状和两个轴分别是什么？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>形状(14, 4)，类型float64。axis 0 是14行，代表8到21时；axis 1 是4列，依次是A、B、C、D室。</p><label class="got"><input type="checkbox" id="got-q2-02" data-q="q2-02">我会了</label></div></details>
+    <details class="qa" id="q2-03" data-member="2"><summary><span class="qno">2-03</span><span class="qtext">数组里为什么有NaN？为什么不填0？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>8时C室（R0029）和12时A室（R0005）的原始人数是空的，算不出使用率。任务书要求用NaN保留。填0等于说“没有人”，会把平均值拉低；删掉又会破坏14 × 4的形状。</p><label class="got"><input type="checkbox" id="got-q2-03" data-q="q2-03">我会了</label></div></details>
+    <details class="qa" id="q2-04" data-member="2"><summary><span class="qno">2-04</span><span class="qtext">nanmean 和 mean 有什么区别？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>mean 遇到NaN，结果就是NaN；nanmean 跳过NaN，只对有效值求平均。Notebook里做了对照：用 np.mean 按房间算，A、C两室的结果是nan。</p><label class="got"><input type="checkbox" id="got-q2-04" data-q="q2-04">我会了</label></div></details>
+    <details class="qa" id="q2-05" data-member="2"><summary><span class="qno">2-05</span><span class="qtext">axis=0 和 axis=1 分别算出什么？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>axis=0 沿着行的方向往下压，每列得到一个数，就是每间房当天的平均使用率，4个数：A 0.5593、B 0.6417、C 0.5308、D 0.5880。axis=1 沿着列的方向往右压，每行一个数，就是每小时四室的平均，14个数，最高是15时0.9132。</p><label class="got"><input type="checkbox" id="got-q2-05" data-q="q2-05">我会了</label></div></details>
+    <details class="qa" id="q2-06" data-member="2"><summary><span class="qno">2-06</span><span class="qtext">最大值在哪？怎么定位的？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>最大值0.9821，在15时D室（55人、56座）。np.nanargmax 返回拉平后的序号31，np.unravel_index 把它换算成(7, 3)：第7行是15时，第3列是D室。</p><label class="got"><input type="checkbox" id="got-q2-06" data-q="q2-06">我会了</label></div></details>
+    <details class="qa" id="q2-07" data-member="2"><summary><span class="qno">2-07</span><span class="qtext">手算核验是怎么做的？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>从原始CSV找11月2日15时的四条记录：A 46/48 = 0.9583，B 60/64 = 0.9375，C 31/40 = 0.7750，D 55/56 = 0.9821，相加除以4得0.9132，和数组里15时的平均一致。另外核对了有NaN的12时：A室缺失，其余三室 (50/64 + 26/40 + 42/56) / 3 = 0.7271，也和 nanmean 的结果一致。</p><label class="got"><input type="checkbox" id="got-q2-07" data-q="q2-07">我会了</label></div></details>
+    <details class="qa" id="q2-08" data-member="2"><summary><span class="qno">2-08</span><span class="qtext">有效观测数为什么给了三个？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>记录数、有效人数个数、有效浓度个数不一样。比如B室有290条记录，其中有效人数288个、有效浓度283个。算“高于1000 ppm的比例”时，分母用有效浓度个数，缺失值不参与比较。</p><label class="got"><input type="checkbox" id="got-q2-08" data-q="q2-08">我会了</label></div></details>
+    <details class="qa" id="q2-09" data-member="2"><summary><span class="qno">2-09</span><span class="qtext">高于1000 ppm的比例怎么算？结果是多少？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>每间房里浓度大于1000的个数，除以该房间的有效浓度个数。B室151/283 = 53.4%，最高；C室26/286 = 9.1%，最低。四室合计383/1146 = 33.4%。</p><label class="got"><input type="checkbox" id="got-q2-09" data-q="q2-09">我会了</label></div></details>
+    <details class="qa" id="q2-10" data-member="2"><summary><span class="qno">2-10</span><span class="qtext">上午、下午、晚间怎么划分？结果如何？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>按任务书：上午 8 ≤ hour &lt; 12，下午 12 ≤ hour &lt; 18，晚间 18 ≤ hour ≤ 21。四间房都是下午使用率最高：B 77.9%、D 72.1%、A 69.1%、C 59.8%；上午最低（26.0%—33.7%），晚间居中（31.4%—42.0%）。</p><label class="got"><input type="checkbox" id="got-q2-10" data-q="q2-10">我会了</label></div></details>
+    <details class="qa" id="q2-11" data-member="2"><summary><span class="qno">2-11</span><span class="qtext">人数最多和使用率最高的是同一间吗？容量有什么影响？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>都是B室：平均35.16人，使用率54.9%，两种排名都是 B &gt; D &gt; A &gt; C。但人数差距会被座位数放大：B室座位是C室的1.60倍，人数是2.08倍，使用率却只是1.30倍。所以比较拥挤程度要看使用率，估算还剩多少座位时再看人数。</p><label class="got"><input type="checkbox" id="got-q2-11" data-q="q2-11">我会了</label></div></details>
+    <details class="qa" id="q2-12" data-member="2"><summary><span class="qno">2-12</span><span class="qtext">工作日和周末差多少？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>工作日15天，平均使用率53.9%；周末6天，37.0%。周末约是工作日的0.69倍，四间房的这个比值都在0.68—0.69之间。</p><label class="got"><input type="checkbox" id="got-q2-12" data-q="q2-12">我会了</label></div></details>
+    <details class="qa" id="q2-13" data-member="2"><summary><span class="qno">2-13</span><span class="qtext">哪两幅图用了Pandas的plot接口？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>图1折线图和图2柱状图用 DataFrame.plot；图3直方图和图4散点图直接用Matplotlib的 ax.hist 和 ax.scatter。任务书要求至少两幅用Pandas接口。</p><label class="got"><input type="checkbox" id="got-q2-13" data-q="q2-13">我会了</label></div></details>
+    <details class="qa" id="q2-14" data-member="2"><summary><span class="qno">2-14</span><span class="qtext">图1为什么12时和17时往下凹？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>数据里12时和17时的记录，通风状态全部是on，曲线在这两个时点下降，比如B室从11时的1060.5 ppm降到12时的984.0 ppm。但这只说明两者同时出现，不能单凭这张图说是通风造成的。</p><label class="got"><input type="checkbox" id="got-q2-14" data-q="q2-14">我会了</label></div></details>
+    <details class="qa" id="q2-15" data-member="2"><summary><span class="qno">2-15</span><span class="qtext">直方图的组距和区间是怎么定的？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>组距50 ppm，从400到1450。区间左闭右开（最后一组两端都包含），比如[950, 1000)包含950、不包含1000。[950, 1000)这组最多，108条。</p><label class="got"><input type="checkbox" id="got-q2-15" data-q="q2-15">我会了</label></div></details>
+    <details class="qa" id="q2-16" data-member="2"><summary><span class="qno">2-16</span><span class="qtext">相关系数0.904说明什么？能说人多导致CO2高吗？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>说明使用率高的时候浓度也高，两者高度正相关（A 0.92、B 0.94、C 0.86、D 0.92）。相关不等于因果，报告里只写相关。同一使用率段里开通风的平均浓度低约172 ppm，可开通风的记录集中在12时、17时和人多的时候，也不能直接当成通风的效果。</p><label class="got"><input type="checkbox" id="got-q2-16" data-q="q2-16">我会了</label></div></details>
+    <details class="qa" id="q2-17" data-member="2"><summary><span class="qno">2-17</span><span class="qtext">图表回查是怎么做的？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>查了三处。图2“B室·下午”柱高77.9%：从 clean_observations.csv 重新读取，B室12—17时有效使用率123个，平均0.7791，一致。图4最高点R0527：回到原始CSV是64人、64座、1432.4 ppm，和坐标一致。图3的[1000, 1050)柱高99：按文件逐条数也是99。</p><label class="got"><input type="checkbox" id="got-q2-17" data-q="q2-17">我会了</label></div></details>
+    <details class="qa" id="q2-18" data-member="2"><summary><span class="qno">2-18</span><span class="qtext">透视表为什么要 reindex？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>保证固定显示A—D室和8—21时，顺序也固定。万一某个小时没有数据，也会留出一列NaN，而不是少一列。</p><label class="got"><input type="checkbox" id="got-q2-18" data-q="q2-18">我会了</label></div></details>
+    <details class="qa" id="q2-19" data-member="2"><summary><span class="qno">2-19</span><span class="qtext">count 和 size 有什么区别？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>size 数行数，包括缺失值；count 只数非缺失值。B室的 size 是290，co2_ppm 的 count 是283。</p><label class="got"><input type="checkbox" id="got-q2-19" data-q="q2-19">我会了</label></div></details>
+  </div>
+
+  <h3>现场改代码</h3>
+  <div class="drills">
+    <article class="drill" data-member="2">
+      <h4>换一个小时做手算核验</h4>
+      <dl>
+        <dt>老师可能说</dt><dd>“换成10点，再手算核对一次。”</dd>
+        <dt>在哪改</dt><dd>2.3节的代码格，搜 <code>check_hour</code>。两行一起改：</dd>
+        <dt>改成</dt><dd><pre><code>check_hour = 10
+hand_mean = (18 / 48 + 32 / 64 + 15 / 40 + 24 / 56) / 4</code></pre></dd>
+        <dt>运行</dt><dd><kbd>Shift</kbd>+<kbd>Enter</kbd>，只运行这一格。</dd>
+        <dt>应该看到</dt><dd>原表四室人数18、32、15、24；手算0.419643，数组 hour_mean[2] = 0.419643，核对一致：True。</dd>
+        <dt>注意</dt><dd>人数要从这一格打印出的原表里抄。只改 check_hour 不改手算公式，会报 AssertionError，这正好说明手算真是按原表数字算的。</dd>
+      </dl>
+    </article>
+    <article class="drill" data-member="2">
+      <h4>高于1200 ppm的比例</h4>
+      <dl>
+        <dt>老师可能说</dt><dd>“阈值改成1200，比例是多少？”</dd>
+        <dt>在哪改</dt><dd>3.1节，搜 <code>co2_gt_1000</code>，把 <code>&gt; 1000</code> 改成 <code>&gt; 1200</code>。</dd>
+        <dt>运行</dt><dd>只运行这一格。</dd>
+        <dt>应该看到</dt><dd>n_co2_gt_1000 一列变成 A 7、B 49、C 0、D 20；比例 A 2.4%、B 17.3%、C 0、D 6.9%。</dd>
+        <dt>注意</dt><dd>列名还叫 gt_1000，是旧名字，口头说明就行。这一格会重写 outputs/room_summary.csv，演示完改回1000再运行一次。</dd>
+      </dl>
+    </article>
+    <article class="drill" data-member="2">
+      <h4>直方图组距改成100</h4>
+      <dl>
+        <dt>老师可能说</dt><dd>“直方图组距改大一点。”</dd>
+        <dt>在哪改</dt><dd>3.4节图3那一格，搜 <code>bins = np.arange</code>，两个50都改成100：</dd>
+        <dt>改成</dt><dd><pre><code>bins = np.arange(400, np.ceil(co2_valid.max() / 100) * 100 + 1, 100)</code></pre></dd>
+        <dt>运行</dt><dd>只运行这一格。</dd>
+        <dt>应该看到</dt><dd>11组；[900, 1000)最多，195条；[1000, 1100)有180条，正好是原来[1000, 1050)的99条加[1050, 1100)的81条。</dd>
+        <dt>注意</dt><dd>不要“运行全部”：3.5节回查的是[1000, 1050)这一组，组距一变就会报 AssertionError。</dd>
+      </dl>
+    </article>
+    <article class="drill" data-member="2">
+      <h4>换一天做数组</h4>
+      <dl>
+        <dt>老师可能说</dt><dd>“换一天试试。”</dd>
+        <dt>在哪改</dt><dd>2.1节，搜 <code>complete_dates[0]</code>，改成 <code>complete_dates[1]</code>。</dd>
+        <dt>运行</dt><dd>依次运行2.1、2.2两格。</dd>
+        <dt>应该看到</dt><dd>11月3日，没有NaN；各室平均 A 0.5164、B 0.5915、C 0.4482、D 0.5510；最大值0.9219在15时B室；15时四室平均0.8696，仍是全天最高。</dd>
+        <dt>注意</dt><dd>2.3节的手算是按11月2日写的，换日期后不要运行它，否则会报 AssertionError。</dd>
+      </dl>
+    </article>
+  </div>
+</section>
+
+<!-- ============ 成员3 ============ -->
+<section class="sec member" id="m3" data-member="3">
+  <div class="member-head">
+    <span class="chip">成员3</span>
+    <h2>任务四 插值与积分 · 任务五 拟合与求根</h2>
+  </div>
+  <h3>这部分在做什么</h3>
+  <p>任务四：挑一间房一天的浓度（A室11月12日，15时缺失），用13个有效点建PCHIP插值曲线，估计14:30和缺失的15时，再用线性插值对照；在12—18时每15分钟取一个点，用梯形法积分，得到浓度时间面积、平均浓度和高于1000 ppm部分的面积。任务五：通风试验A、B两档各16个点，用curve_fit拟合衰减系数k，算残差和RMSE；用brentq求浓度降到800 ppm的时间，向上取整后算能耗，在不超过35分钟的方案里选能耗低的B档。</p>
+
+  <div class="table-wrap">
+    <p class="cap">插值输入：A室2026-11-12各整点浓度（ppm）。15时的原始值是320，低于400的下限，清洗时设为缺失。</p>
+    <table class="inp">
+      <thead><tr><th>时</th><th>8</th><th>9</th><th>10</th><th>11</th><th>12</th><th>13</th><th>14</th><th>15</th><th>16</th><th>17</th><th>18</th><th>19</th><th>20</th><th>21</th></tr></thead>
+      <tbody><tr><th>浓度</th><td>618.7</td><td>657.7</td><td>806.0</td><td>1005.1</td><td>860.4</td><td>1019.5</td><td>1078.3</td><td class="gap">缺失</td><td>1094.1</td><td>1002.4</td><td>994.6</td><td>928.1</td><td>838.1</td><td>639.9</td></tr></tbody>
+    </table>
+  </div>
+  <div class="formula">
+    <p>C(t) = C_bg + (C0 − C_bg) · e^(−k·t)　<span>C_bg = 438，C0 = 1665，t 的单位是分钟</span></p>
+    <p>t* = ln[(C0 − C_bg) / (C_target − C_bg)] / k　<span>令 C(t) = 800 解出的达标时间</span></p>
+    <p>能耗(kWh) = 功率(kW) × 计划分钟数 / 60　<span>A档1.10 kW，B档1.80 kW</span></p>
+  </div>
+
+  <h3>必须会讲的代码</h3>
+  <ol class="codelist">
+    <li>
+      <p class="where">4.1 筛选“房间＋日期”</p>
+      <pre><code>ends_ok = co2_wide[8].notna() &amp; co2_wide[21].notna()
+qualified = co2_wide[ends_ok &amp; (n_valid &gt;= 13)]</code></pre>
+      <p>两个端点（8时、21时）都有效，并且14个整点里至少13个有效。84个组合里有75个符合。</p>
+    </li>
+    <li>
+      <p class="where">4.1 只用有效点</p>
+      <pre><code>t_obs, c_obs = t_hours[is_valid], c_values[is_valid]</code></pre>
+      <p>用布尔索引只取有效观测作为插值输入，缺失的15时不放进去。</p>
+    </li>
+    <li>
+      <p class="where">4.2 插值</p>
+      <pre><code>pchip = PchipInterpolator(t_obs, c_obs)
+t_half = 14.5
+c_half_pchip = float(pchip(t_half))
+c_half_linear = float(np.interp(t_half, t_obs, c_obs))</code></pre>
+      <p>用13个点建PCHIP曲线，在14.5（即14:30）求值；np.interp 是线性插值，作为对照。</p>
+    </li>
+    <li>
+      <p class="where">4.3 网格和积分</p>
+      <pre><code>t_grid = np.linspace(12, 18, 25)  # 12:00, 12:15, …, 18:00（单位：h）
+c_grid = pchip(t_grid)
+area_ppm_h = trapezoid(c_grid, x=t_grid)
+mean_conc = area_ppm_h / duration_h</code></pre>
+      <p>25个点，间隔0.25小时。trapezoid 显式传入以小时为单位的时间坐标，面积单位是 ppm·h；除以6小时得到时间平均浓度。</p>
+    </li>
+    <li>
+      <p class="where">4.3 高于1000的部分</p>
+      <pre><code>excess = np.maximum(c_grid - 1000, 0)
+area_above_ppm_h = trapezoid(excess, x=t_grid)</code></pre>
+      <p>每个点减1000，负数变成0，只积高出来的那部分。</p>
+    </li>
+    <li>
+      <p class="where">5.2 模型</p>
+      <pre><code>def co2_decay(t, k):
+    return C_bg + (C0 - C_bg) * np.exp(-k * t)</code></pre>
+      <p>C_bg 和 C0 用试验单元给定的438和1665，只有k是要拟合的参数。</p>
+    </li>
+    <li>
+      <p class="where">5.2 拟合</p>
+      <pre><code>popt, pcov = curve_fit(co2_decay, t, y, p0=[0.05])
+k_hat, k_se = float(popt[0]), float(np.sqrt(pcov[0, 0]))
+rmse = float(np.sqrt(np.mean(residual ** 2)))</code></pre>
+      <p>curve_fit 用最小二乘找最合适的k；p0 是初始猜测；pcov 开方是k的标准误；残差平方的平均再开方就是RMSE。</p>
+    </li>
+    <li>
+      <p class="where">5.3 求根</p>
+      <pre><code>def g(t, k):
+    return co2_decay(t, k) - C_target
+
+assert ga * gb &lt; 0
+t_root = brentq(g, *bracket, args=(k_hat,), xtol=1e-12)</code></pre>
+      <p>把“什么时候降到800”写成 g(t) = 0。先确认区间[0, 60]两端一正一负，再求根；args 把拟合出的k传给g。</p>
+    </li>
+    <li>
+      <p class="where">5.3 取整和能耗</p>
+      <pre><code>plan_minutes = int(np.ceil(t_root))
+energy_kwh = power_kw[level] * plan_minutes / 60</code></pre>
+      <p>向上取整到整分钟；千瓦 × 分钟 ÷ 60 = 千瓦时。</p>
+    </li>
+    <li>
+      <p class="where">5.4 选方案</p>
+      <pre><code>best_level = fit_root.loc[fit_root["meets_deadline"], "energy_kwh"].idxmin()</code></pre>
+      <p>先筛出计划时间不超过35分钟的方案，再在里面挑能耗最小的。</p>
+    </li>
+  </ol>
+
+  <h3>常见问答</h3>
+  <div class="qalist">
+    <details class="qa" id="q3-01" data-member="3"><summary><span class="qno">3-01</span><span class="qtext">为什么选A室11月12日？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>先筛出8时、21时两端都有效、14个点里至少13个有效的组合，84个里有75个。为了演示补值和“高于1000 ppm的面积”，再要求恰好缺1个点、缺的点在12—18时、12—18时的浓度有高于也有低于1000的。符合的有A室11月12日、C室11月20日、D室11月14日，取第一个。</p><label class="got"><input type="checkbox" id="got-q3-01" data-q="q3-01">我会了</label></div></details>
+    <details class="qa" id="q3-02" data-member="3"><summary><span class="qno">3-02</span><span class="qtext">15时为什么缺失？插值用了几个点？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>原始记录R0568的浓度是320 ppm，低于400的下限，清洗时设为缺失。所以插值只用其余13个有效观测。</p><label class="got"><input type="checkbox" id="got-q3-02" data-q="q3-02">我会了</label></div></details>
+    <details class="qa" id="q3-03" data-member="3"><summary><span class="qno">3-03</span><span class="qtext">PCHIP是什么？和线性插值、三次样条有什么区别？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>PCHIP是分段三次埃尔米特插值：相邻两点之间用一段三次曲线，曲线经过每个数据点；每个点的斜率按两侧数据来定，数据单调的地方曲线也单调，不会冲出数据范围。线性插值是相邻两点连直线，拐角处不光滑。三次样条更光滑，但数据变化突然时，两点之间可能冲过头。浓度数据用PCHIP比较稳妥。</p><label class="got"><input type="checkbox" id="got-q3-03" data-q="q3-03">我会了</label></div></details>
+    <details class="qa" id="q3-04" data-member="3"><summary><span class="qno">3-04</span><span class="qtext">14:30的估计值是多少？两种方法差多少？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>PCHIP 1085.05 ppm，线性1082.25 ppm，差2.80 ppm。14时到16时浓度变化平缓（1078.3到1094.1），所以两种方法差得不多。</p><label class="got"><input type="checkbox" id="got-q3-04" data-q="q3-04">我会了</label></div></details>
+    <details class="qa" id="q3-05" data-member="3"><summary><span class="qno">3-05</span><span class="qtext">14:30的线性插值怎么手算？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>15时缺失，14:30两侧最近的有效点是14时的1078.3和16时的1094.1。1078.3 + (1094.1 − 1078.3) × (14.5 − 14) ÷ (16 − 14) = 1078.3 + 15.8 × 0.25 = 1082.25 ppm。</p><label class="got"><input type="checkbox" id="got-q3-05" data-q="q3-05">我会了</label></div></details>
+    <details class="qa" id="q3-06" data-member="3"><summary><span class="qno">3-06</span><span class="qtext">插值结果是真实浓度吗？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>不是，是估计值。15时的1090.0、14:30的1085.05和积分面积都是根据前后的观测估出来的，图和报告里都标了“估计值”。</p><label class="got"><input type="checkbox" id="got-q3-06" data-q="q3-06">我会了</label></div></details>
+    <details class="qa" id="q3-07" data-member="3"><summary><span class="qno">3-07</span><span class="qtext">梯形积分的原理是什么？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>把曲线下面的面积切成很多个窄条，每条当成梯形：面积 =（左边高 + 右边高）÷ 2 × 宽，再全部加起来。这里宽是0.25小时，一共24个梯形。</p><label class="got"><input type="checkbox" id="got-q3-07" data-q="q3-07">我会了</label></div></details>
+    <details class="qa" id="q3-08" data-member="3"><summary><span class="qno">3-08</span><span class="qtext">为什么一定要传 x=t_grid？不传会怎样？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>不传的话，trapezoid 默认相邻两点间隔是1，相当于把15分钟当成1小时，面积会变成24851.58，正好是正确值6212.90的4倍。显式传入时间坐标，单位才是 ppm·h。</p><label class="got"><input type="checkbox" id="got-q3-08" data-q="q3-08">我会了</label></div></details>
+    <details class="qa" id="q3-09" data-member="3"><summary><span class="qno">3-09</span><span class="qtext">6212.90 ppm·h 是什么意思？平均浓度怎么来的？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>它是浓度对时间的累计量，单位是“浓度 × 时间”，换成分钟是372773.7 ppm·min。除以时长6小时，得到时间平均浓度1035.48 ppm，意思是12—18时平均下来比1000略高。</p><label class="got"><input type="checkbox" id="got-q3-09" data-q="q3-09">我会了</label></div></details>
+    <details class="qa" id="q3-10" data-member="3"><summary><span class="qno">3-10</span><span class="qtext">高于1000 ppm部分的面积怎么算？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>每个网格点的浓度减1000，小于0的记成0（np.maximum），再对它积分，得到283.92 ppm·h。25个网格点里有17个高于1000。</p><label class="got"><input type="checkbox" id="got-q3-10" data-q="q3-10">我会了</label></div></details>
+    <details class="qa" id="q3-11" data-member="3"><summary><span class="qno">3-11</span><span class="qtext">插值和积分是怎么核验的？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>三项：PCHIP曲线在13个输入点上的误差是0，因为它一定经过数据点；手算14:30的线性插值得1082.25；手算第一个小梯形[12:00, 12:15]：(860.4 + 881.23) ÷ 2 × 0.25 = 217.70 ppm·h。都和程序结果一致。</p><label class="got"><input type="checkbox" id="got-q3-11" data-q="q3-11">我会了</label></div></details>
+    <details class="qa" id="q3-12" data-member="3"><summary><span class="qno">3-12</span><span class="qtext">拟合的模型是什么？为什么只拟合k？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>C(t) = C_bg + (C0 − C_bg) · e^(−kt)。t = 0时等于C0，时间越长越接近背景浓度C_bg。任务书给定了C_bg = 438、C0 = 1665，只要求拟合k，所以只有一个参数。</p><label class="got"><input type="checkbox" id="got-q3-12" data-q="q3-12">我会了</label></div></details>
+    <details class="qa" id="q3-13" data-member="3"><summary><span class="qno">3-13</span><span class="qtext">curve_fit 是怎么工作的？p0 为什么取0.05？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>用最小二乘法：找一个k，让16个观测值与模型值之差的平方和最小。p0是迭代的起点。可以从数据粗估：A档15分钟时，浓度高出背景的部分从1227降到约640，降了差不多一半，k ≈ −ln(640/1227) / 15 ≈ 0.043，所以初值取0.05比较接近。我们试过把p0改成1或者干脆不写，k都一样，说明这里对初值不敏感。</p><label class="got"><input type="checkbox" id="got-q3-13" data-q="q3-13">我会了</label></div></details>
+    <details class="qa" id="q3-14" data-member="3"><summary><span class="qno">3-14</span><span class="qtext">k、RMSE、标准误分别说明什么？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>k是衰减系数，单位1/min，越大降得越快：B档0.0775，A档0.0454。RMSE是残差的均方根，A档21.95、B档20.88 ppm，可以理解为曲线平均偏离观测点二十多ppm。标准误（A 0.00069、B 0.00133）表示k这个估计值的不确定程度，比k本身小得多，说明k估得比较稳。生成数据时设定的k是0.046和0.077，拟合结果很接近。</p><label class="got"><input type="checkbox" id="got-q3-14" data-q="q3-14">我会了</label></div></details>
+    <details class="qa" id="q3-15" data-member="3"><summary><span class="qno">3-15</span><span class="qtext">残差图说明什么？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>残差 = 观测 − 拟合，在0上下分布，没有一直偏正或偏负的趋势。最大绝对值约51 ppm（A档36分钟那个点），说明指数模型的形状合适，剩下的主要是随机误差。</p><label class="got"><input type="checkbox" id="got-q3-15" data-q="q3-15">我会了</label></div></details>
+    <details class="qa" id="q3-16" data-member="3"><summary><span class="qno">3-16</span><span class="qtext">brentq 为什么要先检查两端异号？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>brentq 是“夹逼”的方法，要求函数在区间两端一正一负，中间才一定有根（介值定理）。g(0) = 1665 − 800 = +865，g(60) 在A档是 −281.29、B档是 −350.28，所以有根。如果两端同号，brentq 会直接报错。</p><label class="got"><input type="checkbox" id="got-q3-16" data-q="q3-16">我会了</label></div></details>
+    <details class="qa" id="q3-17" data-member="3"><summary><span class="qno">3-17</span><span class="qtext">根是多少？怎么验证？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>A档26.91分钟，B档15.75分钟。把根代回g(t)，误差小于1e−12 ppm；再用解析解 t* = ln[(C0 − C_bg) / (C_target − C_bg)] / k 算：ln(1227/362) = 1.2207，分别除以两个k，得26.91和15.75，一致。</p><label class="got"><input type="checkbox" id="got-q3-17" data-q="q3-17">我会了</label></div></details>
+    <details class="qa" id="q3-18" data-member="3"><summary><span class="qno">3-18</span><span class="qtext">为什么向上取整？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>26.91分钟时浓度刚好等于800，如果取26分钟，浓度约815 ppm，还没达标；向上取27分钟才保证达标。27分钟时A档浓度798.6 ppm，B档16分钟时793.0 ppm，都不超过800。</p><label class="got"><input type="checkbox" id="got-q3-18" data-q="q3-18">我会了</label></div></details>
+    <details class="qa" id="q3-19" data-member="3"><summary><span class="qno">3-19</span><span class="qtext">为什么选B档？B档功率更大，为什么反而省电？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>能耗 = 功率 × 时间。A档1.10 kW × 27分钟 ÷ 60 = 0.495 kWh；B档1.80 kW × 16分钟 ÷ 60 = 0.480 kWh。B档功率大，但用时短很多，总能耗少0.015 kWh，还提前11分钟达标。两档只差约3%，k稍有变化结论就可能改变，而且只适用于课堂模拟。</p><label class="got"><input type="checkbox" id="got-q3-19" data-q="q3-19">我会了</label></div></details>
+    <details class="qa" id="q3-20" data-member="3"><summary><span class="qno">3-20</span><span class="qtext">积分网格为什么取15分钟？取更细会怎样？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>15分钟已经够细了。我们试过改成5分钟（73个点），面积是6212.96 ppm·h，只差0.06，平均浓度1035.49 ppm，几乎一样。</p><label class="got"><input type="checkbox" id="got-q3-20" data-q="q3-20">我会了</label></div></details>
+  </div>
+
+  <h3>现场改代码</h3>
+  <div class="drills">
+    <article class="drill" data-member="3">
+      <h4>换一个半点，比如13:30</h4>
+      <dl>
+        <dt>老师可能说</dt><dd>“估计一下13点半的浓度。”</dd>
+        <dt>在哪改</dt><dd>4.2节，把 <code>t_half = 14.5</code> 改成 <code>t_half = 13.5</code>。</dd>
+        <dt>运行</dt><dd>只运行4.2这一格。</dd>
+        <dt>应该看到</dt><dd>PCHIP 1057.73 ppm，线性1048.90 ppm，差 +8.83 ppm。打印文字里的“14:30”是写死的，口头说明，或者一起改成13:30。</dd>
+        <dt>手算</dt><dd>13时1019.5、14时1078.3：1019.5 + (1078.3 − 1019.5) × 0.5 = 1048.9。若要运行4.4节，把手算那行改成：<pre><code>hand_linear = 1019.5 + (1078.3 - 1019.5) * (13.5 - 13) / (14 - 13)</code></pre></dd>
+      </dl>
+    </article>
+    <article class="drill" data-member="3">
+      <h4>积分步长改成5分钟</h4>
+      <dl>
+        <dt>老师可能说</dt><dd>“网格再细一点，结果会变吗？”</dd>
+        <dt>在哪改</dt><dd>4.3节，把 <code>np.linspace(12, 18, 25)</code> 改成 <code>np.linspace(12, 18, 73)</code>（6小时 × 12 + 1 = 73个点）。</dd>
+        <dt>运行</dt><dd>只运行4.3这一格。</dd>
+        <dt>应该看到</dt><dd>面积6212.96 ppm·h，平均1035.49 ppm，高于1000部分283.58 ppm·h，和15分钟网格几乎一样。</dd>
+        <dt>注意</dt><dd>打印里的“15 min”和“25个网格点”是写死的文字。4.4节手算小梯形那行要把 <code>* 0.25</code> 改成 <code>* (5 / 60)</code>，结果71.808。</dd>
+      </dl>
+    </article>
+    <article class="drill" data-member="3">
+      <h4>目标浓度改成700 ppm</h4>
+      <dl>
+        <dt>老师可能说</dt><dd>“目标改成700，还选B档吗？”</dd>
+        <dt>在哪改</dt><dd>任务五开头的通风试验数据格不能改。在它下面新建一格，写 <code>C_target = 700.0</code> 并运行。</dd>
+        <dt>运行</dt><dd>再依次运行5.2、5.3、5.4三节的代码格。</dd>
+        <dt>应该看到</dt><dd>A档34.04分钟 → 35分钟，0.642 kWh；B档19.92分钟 → 20分钟，0.600 kWh。仍选B档，少0.042 kWh。A档35分钟正好等于deadline，也算满足。</dd>
+      </dl>
+    </article>
+    <article class="drill" data-member="3">
+      <h4>deadline改成20或15分钟</h4>
+      <dl>
+        <dt>老师可能说</dt><dd>“如果要求20分钟内达标呢？15分钟呢？”</dd>
+        <dt>在哪改</dt><dd>同样在通风试验数据格下面新建一格，写 <code>deadline = 20.0</code>，再运行5.2—5.4。</dd>
+        <dt>应该看到</dt><dd>20分钟：A档27分钟不满足，只剩B档，选B。15分钟：5.4报 <code>ValueError: attempt to get argmin of an empty sequence</code>。</dd>
+        <dt>怎么解释</dt><dd>两档都超过15分钟，筛完是空的，idxmin 没法从空表里挑最小值。回答“两档都不满足要求，需要更大功率或者放宽时间”。</dd>
+      </dl>
+    </article>
+    <article class="drill" data-member="3">
+      <h4>求根区间改小</h4>
+      <dl>
+        <dt>老师可能说</dt><dd>“区间换成0到10分钟会怎样？”</dd>
+        <dt>在哪改</dt><dd>5.3节，把 <code>bracket = (0.0, 60.0)</code> 改成 <code>(0.0, 10.0)</code>。</dd>
+        <dt>应该看到</dt><dd>“A档：g(0) = +865.00，g(10) = +417.58，两端异号：False”，然后 AssertionError 停下。</dd>
+        <dt>怎么解释</dt><dd>10分钟时浓度还没降到800，两端同号，区间里没有根，所以要先查符号。延伸：目标改成500时[0, 60]也不够（A档g(60) = +18.71），要扩到[0, 120]；但那时A要66分钟、B要39分钟，都超过35分钟。</dd>
+      </dl>
+    </article>
+    <article class="drill" data-member="3">
+      <h4>换一个初值p0</h4>
+      <dl>
+        <dt>老师可能说</dt><dd>“初值改了，结果会变吗？”</dd>
+        <dt>在哪改</dt><dd>5.2节，把 <code>p0=[0.05]</code> 改成 <code>p0=[1.0]</code>，或者删掉p0。</dd>
+        <dt>应该看到</dt><dd>k仍是0.04536和0.07752，结果不变。改成5.0会出现 overflow 警告，但最后结果也一样。</dd>
+        <dt>怎么解释</dt><dd>只有一个参数，模型又是单调的，所以对初值不敏感。</dd>
+      </dl>
+    </article>
+  </div>
+</section>
+
+<!-- ============ 交叉核验 ============ -->
+<section class="sec" id="checks" data-member="all">
+  <h2>交叉核验：每人亲手做一遍</h2>
+  <p>报告第七节写了谁核验谁，这一项占2分。老师很可能问“你核验了什么、怎么核的”，所以每人至少把自己名下的几项亲手做一遍。用Excel或WPS时，先把文件复制一份再打开，关闭时选“不保存”。</p>
+  <div class="checks">
+    <article class="check" data-member="1">
+      <div class="check-head"><span class="chip">核验人：成员1</span><h3>11月2日15时四室平均使用率</h3><span class="who">原计算：成员2</span></div>
+      <ol>
+        <li>打开 data/sensor_observations.csv，找到2026年11月2日15点的四条记录：A室46人，B室60人，C室31人，D室55人。</li>
+        <li>座位数：A 48，B 64，C 40，D 56（room_info.csv）。</li>
+        <li>用计算器：46 ÷ 48 = 0.9583，60 ÷ 64 = 0.9375，31 ÷ 40 = 0.7750，55 ÷ 56 = 0.9821；四个相加3.6530，再除以4 = 0.9132。</li>
+      </ol>
+      <p class="expect">对照 outputs/numpy_array_result.csv 里 hour = 15 那一行的 hour_mean_seat_rate：0.913244。</p>
+    </article>
+    <article class="check" data-member="3">
+      <div class="check-head"><span class="chip">核验人：成员3</span><h3>图2“B室·下午”柱形</h3><span class="who">原计算：成员2</span></div>
+      <ol>
+        <li>打开 data/clean_observations.csv。D列是hour，E列是room_id，H列是seat_rate。</li>
+        <li>在空白格输入 <code>=COUNTIFS(E:E,"B",D:D,"&gt;=12",D:D,"&lt;=17")</code>，得到125：B室12—17时共125条。</li>
+        <li>再输入 <code>=AVERAGEIFS(H:H,E:E,"B",D:D,"&gt;=12",D:D,"&lt;=17")</code>，得到0.7791。2个空格自动跳过，参与平均的是123个。</li>
+      </ol>
+      <p class="expect">换成百分数是77.9%，和图2 B室下午柱子上标的77.9一致。</p>
+    </article>
+    <article class="check" data-member="2">
+      <div class="check-head"><span class="chip">核验人：成员2</span><h3>14:30线性插值和第一个小梯形</h3><span class="who">原计算：成员3</span></div>
+      <ol>
+        <li>在Notebook 4.1节的输入表找到：14时1078.3 ppm，16时1094.1 ppm，15时缺失。</li>
+        <li>线性插值：1078.3 + (1094.1 − 1078.3) × (14.5 − 14) ÷ (16 − 14) = 1078.3 + 15.8 × 0.25 = 1082.25 ppm。</li>
+        <li>打开 outputs/interpolation_grid_12_18.csv，前两行的 pchip_ppm 是860.4（12:00）和881.234（12:15）。</li>
+        <li>梯形面积：(860.4 + 881.23) ÷ 2 × 0.25 = 217.70 ppm·h。</li>
+      </ol>
+      <p class="expect">对照 outputs/interpolation_integration_result.csv：half_hour_linear = 1082.25，hand_trapezoid_12_00_12_15 = 217.704。</p>
+    </article>
+    <article class="check" data-member="3">
+      <div class="check-head"><span class="chip">核验人：成员3</span><h3>无效记录和重复记录数量</h3><span class="who">原计算：成员1</span></div>
+      <ol>
+        <li>打开 data/invalid_records.csv：8行数据。最后一列 invalid_reason：时间无法解析5条，房间编号为空1条，房间编号不属于A至D 2条（E和Z）。</li>
+        <li>打开复制出来的 sensor_observations.csv：共1187行数据（Excel行号到1188，因为第1行是表头）。</li>
+        <li>数据 → 删除重复项，勾选全部列，提示删除了6个重复值。按 <kbd>Ctrl</kbd>+<kbd>Z</kbd> 撤销，再只勾选 room_id 和 timestamp 两列，提示删除了11个。</li>
+        <li>11 − 6 = 5，就是 K09001—K09005 这5条（筛选 record_id 以K开头就能看到）。关闭，不保存。</li>
+      </ol>
+      <p class="expect">和 data/data_quality.csv 里的“无效记录8条、完全重复6条、组合重复5条”一致。也可以在Notebook里运行 <code>sensor_raw.duplicated().sum()</code>，结果是6。</p>
+    </article>
+    <article class="check" data-member="1">
+      <div class="check-head"><span class="chip">核验人：成员1</span><h3>brentq的根</h3><span class="who">原计算：成员3 · Notebook任务六的表里有，报告里没列</span></div>
+      <ol>
+        <li>用计算器算 (1665 − 438) ÷ (800 − 438) = 1227 ÷ 362 = 3.3895。</li>
+        <li>ln(3.3895) = 1.2207。</li>
+        <li>A档：1.2207 ÷ 0.045357 = 26.91分钟；B档：1.2207 ÷ 0.07752 = 15.75分钟。</li>
+      </ol>
+      <p class="expect">对照 outputs/fit_root_result.csv 的 t_root_min：26.912628 和 15.746672。</p>
+    </article>
+  </div>
+</section>
+
+<!-- ============ 现场操作 ============ -->
+<section class="sec" id="ops" data-member="all">
+  <h2>现场操作清单</h2>
+  <h3>答辩前一天</h3>
+  <ol class="steps">
+    <li>在答辩要用的那台电脑上打开 project.ipynb，重启内核并运行全部。确认最后一格打印“缺少的文件：无”和“原始CSV未被覆盖”为True，图里的中文不是方框。</li>
+    <li>确认装好了 numpy、pandas、matplotlib、scipy 和 jupyter。缺哪个就用 <code>pip install numpy pandas matplotlib scipy jupyter</code> 安装（需要联网）。最稳妥的是带自己装好环境的电脑去。</li>
+    <li>练习改代码时，先把整个文件夹复制一份，在副本里改。代码一运行就会覆盖 outputs 和 figures 里的文件。</li>
+  </ol>
+  <h3>答辩现场</h3>
+  <ul class="tips">
+    <li>改参数时只改那一处，按 <kbd>Shift</kbd>+<kbd>Enter</kbd> 只运行这一格，不要点“运行全部”。后面的核验格是按原来的数字写的手算，参数一变就会报 AssertionError，这是正常的。</li>
+    <li>演示完把数字改回去，再运行一次那一格；不要保存改过的Notebook。</li>
+  </ul>
+  <h3>看懂报错</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>最后一行写着</th><th>意思</th><th>怎么办</th></tr></thead>
+      <tbody>
+        <tr><td><code>NameError: name '…' is not defined</code></td><td>前面的格没运行，变量还不存在</td><td>从上往下依次运行，或者重启并运行全部</td></tr>
+        <tr><td><code>AssertionError</code></td><td>核验没通过，多半是手算数字没跟着参数改</td><td>把手算那行改成新参数对应的数字</td></tr>
+        <tr><td><code>ValueError: attempt to get argmin of an empty sequence</code></td><td>没有方案满足deadline</td><td>说明两档都不满足，需要放宽时间或加大功率</td></tr>
+        <tr><td><code>ValueError: f(a) and f(b) must have different signs</code></td><td>brentq的区间两端同号</td><td>扩大求根区间</td></tr>
+        <tr><td><code>KeyError</code></td><td>常常是上一格出错留下的连锁问题</td><td>先解决最上面那个报错</td></tr>
+        <tr><td><code>ModuleNotFoundError: No module named 'scipy'</code></td><td>没装这个库</td><td><code>pip install scipy</code></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <h3>常用按键</h3>
+  <ul class="keys">
+    <li><kbd>Shift</kbd>+<kbd>Enter</kbd> 运行当前格</li>
+    <li><kbd>Esc</kbd> 再按 <kbd>B</kbd> 在下面插入新格</li>
+    <li><kbd>Esc</kbd> 再连按两下 <kbd>D</kbd> 删除当前格</li>
+    <li><kbd>Ctrl</kbd>+<kbd>F</kbd>（Mac用 <kbd>Cmd</kbd>+<kbd>F</kbd>）搜代码</li>
+  </ul>
+  <h3>文件在哪</h3>
+  <p>data 放原始数据和清洗后的数据；outputs 放15张结果表；figures 放6幅图；报告是“第9组_校园自习室数据分析报告.docx”。“关键数字”里每组数字都标了来源文件。</p>
+</section>
+
+<!-- ============ 全组问答 ============ -->
+<section class="sec" id="team" data-member="all">
+  <h2>全组都要会的问题</h2>
+  <div class="qalist">
+    <details class="qa" id="qt-01" data-member="all"><summary><span class="qno">全-01</span><span class="qtext">你们的数据是真实的吗？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>不是。数据是老师给的生成代码按组号9生成的教学模拟数据，数据随机种子20270183，通风试验的种子20262434。所有结论只适用于课堂模拟。</p><label class="got"><input type="checkbox" id="got-qt-01" data-q="qt-01">我会了</label></div></details>
+    <details class="qa" id="qt-02" data-member="all"><summary><span class="qno">全-02</span><span class="qtext">group_id 有什么用？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>它决定随机种子：data_seed = 20261102 + 9 × 1009 = 20270183。不同组的数据不同；同一组每次运行，数据完全一样，所以结果能复现。</p><label class="got"><input type="checkbox" id="got-qt-02" data-q="qt-02">我会了</label></div></details>
+    <details class="qa" id="qt-03" data-member="all"><summary><span class="qno">全-03</span><span class="qtext">怎么证明Notebook能从头运行？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>提交前重启内核、运行全部，29个代码格按顺序执行，没有报错。最后一格检查了 data、outputs、figures 三个文件夹的文件是否齐全、六幅图是否200 dpi、原始CSV有没有被改过。</p><label class="got"><input type="checkbox" id="got-qt-03" data-q="qt-03">我会了</label></div></details>
+    <details class="qa" id="qt-04" data-member="all"><summary><span class="qno">全-04</span><span class="qtext">你们是怎么分工和交叉核验的？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>成员1做任务一和报告统稿，成员2做任务二、三，成员3做任务四、五。每项关键计算都由另一个人核验：成员1手算了15时的平均使用率和brentq的根，成员2手算了14:30的线性插值和第一个梯形，成员3回查了图2的柱高和无效、重复记录的数量。说完后由对应的人讲自己是怎么核的。</p><label class="got"><input type="checkbox" id="got-qt-04" data-q="qt-04">我会了</label></div></details>
+    <details class="qa" id="qt-05" data-member="all"><summary><span class="qno">全-05</span><span class="qtext">三条建议分别是什么？依据是什么？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>一、B室下午加强通风：B室下午平均使用率77.9%，平均浓度1151.8 ppm，下午88.6%的浓度高于1000，都是四室最高，可参考B档通风约16分钟。二、15时前后按使用率分流：15时平均使用率79.5%，B室平均只剩约8.3个空座，C室还有约12.6个，引导学生去C室和A室。三、周末上午只开B、D两室：周末上午平均使用率22.7%，工作日上午33.0%，周末上午任一小时四室合计最多80人，B、D两室共120座够用。每条都写了限制。</p><label class="got"><input type="checkbox" id="got-qt-05" data-q="qt-05">我会了</label></div></details>
+    <details class="qa" id="qt-06" data-member="all"><summary><span class="qno">全-06</span><span class="qtext">报告里哪些数是观测值，哪些是估计值？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>人数、浓度是原始观测；A室11月12日15时的1090.0 ppm是缺失补值；14:30的浓度和12—18时的面积是插值估计；k、达标时间、能耗是拟合结果。全部数据都是课堂模拟。</p><label class="got"><input type="checkbox" id="got-qt-06" data-q="qt-06">我会了</label></div></details>
+    <details class="qa" id="qt-07" data-member="all"><summary><span class="qno">全-07</span><span class="qtext">你们的结论有什么局限？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>一是模拟数据，只有21天，周末只有6天；二是通风和浓度之间只看到相关，开通风的记录集中在12时、17时和人多的时候，不能说明因果；三是通风试验从1665 ppm、无人的状态开始，和有人在的自习室不一样，实际效果要现场测。</p><label class="got"><input type="checkbox" id="got-qt-07" data-q="qt-07">我会了</label></div></details>
+    <details class="qa" id="qt-08" data-member="all"><summary><span class="qno">全-08</span><span class="qtext">报告说15时平均使用率79.5%，可透视表四个数平均是79.6%，为什么？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>算法不同。79.5%是把21天里四间房15时的全部有效记录放在一起求平均；透视表是先算每间房15时的平均，再把四个数平均。B室15时有一条人数缺失，只有20个有效值，其他三间都是21个，两种算法的权重不同，所以差0.1个百分点。</p><label class="got"><input type="checkbox" id="got-qt-08" data-q="qt-08">我会了</label></div></details>
+    <details class="qa" id="qt-09" data-member="all"><summary><span class="qno">全-09</span><span class="qtext">为什么用了MD5、PIL这些课上没讲的东西？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>它们只是辅助检查，不是分析方法。MD5算文件的“指纹”，证明原始CSV没被改；PIL读图片的dpi，证明六幅图都是200 dpi。分析用的Pandas、NumPy、SciPy方法都在任务书要求的范围内。</p><label class="got"><input type="checkbox" id="got-qt-09" data-q="qt-09">我会了</label></div></details>
+    <details class="qa" id="qt-10" data-member="all"><summary><span class="qno">全-10</span><span class="qtext">如果再给你们一周，会怎么改进？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>一是用真实的传感器数据检验结论；二是拉长周末的样本，现在只有6天；三是在有人的自习室里做开、关通风的对照试验，才能说清楚通风到底降低了多少浓度；四是每间房分别做通风试验，因为房间大小不同，k值可能不一样。</p><label class="got"><input type="checkbox" id="got-qt-10" data-q="qt-10">我会了</label></div></details>
+  </div>
+</section>
+
+<footer>
+  <p>数字来源：本组 project.ipynb 的运行结果（group_id = 9，数据种子20270183，通风试验种子20262434）。如果改动了Notebook，以重新运行的结果为准。</p>
+</footer>
+</div>
+
+<script>
+(function () {
+  var page = document.getElementById("page");
+  var KEY_FILTER = "dh9-filter", KEY_DONE = "dh9-done";
+  function load(key) { try { return localStorage.getItem(key); } catch (e) { return null; } }
+  function save(key, value) { try { localStorage.setItem(key, value); } catch (e) {} }
+
+  var qas = Array.prototype.slice.call(document.querySelectorAll("details.qa"));
+  document.getElementById("n-qa").textContent = qas.length;
+  document.getElementById("n-drill").textContent = document.querySelectorAll(".drill").length;
+  document.getElementById("n-check").textContent = document.querySelectorAll(".check").length;
+
+  var done = {};
+  try { (JSON.parse(load(KEY_DONE) || "[]") || []).forEach(function (id) { done[id] = true; }); } catch (e) {}
+  qas.forEach(function (d) {
+    var box = d.querySelector("input[data-q]");
+    if (done[d.id]) { d.classList.add("done"); if (box) box.checked = true; }
+  });
+  function persist() { save(KEY_DONE, JSON.stringify(Object.keys(done))); }
+
+  function visibleQas() { return qas.filter(function (d) { return d.offsetParent !== null; }); }
+  var progress = document.getElementById("progress");
+  function updateProgress() {
+    var v = visibleQas();
+    var n = v.filter(function (d) { return d.classList.contains("done"); }).length;
+    progress.textContent = "已掌握 " + n + " / " + v.length;
+  }
+
+  document.addEventListener("change", function (e) {
+    var box = e.target.closest ? e.target.closest("input[data-q]") : null;
+    if (!box) return;
+    var d = document.getElementById(box.dataset.q);
+    if (box.checked) { done[d.id] = true; d.classList.add("done"); }
+    else { delete done[d.id]; d.classList.remove("done"); }
+    persist();
+    updateProgress();
+  });
+
+  var btnExpand = document.getElementById("btn-expand");
+  function syncExpand() {
+    var v = visibleQas();
+    var allOpen = v.length > 0 && v.every(function (d) { return d.open; });
+    btnExpand.textContent = allOpen ? "收起答案" : "展开答案";
+    btnExpand.setAttribute("aria-pressed", String(allOpen));
+  }
+  btnExpand.addEventListener("click", function () {
+    var v = visibleQas();
+    var allOpen = v.every(function (d) { return d.open; });
+    v.forEach(function (d) { d.open = !allOpen; });
+    syncExpand();
+  });
+  qas.forEach(function (d) { d.addEventListener("toggle", syncExpand); });
+
+  var segButtons = Array.prototype.slice.call(document.querySelectorAll(".seg button"));
+  function setFilter(f, remember) {
+    page.setAttribute("data-filter", f);
+    segButtons.forEach(function (b) { b.setAttribute("aria-pressed", String(b.dataset.f === f)); });
+    if (remember) save(KEY_FILTER, f);
+    updateProgress();
+    syncExpand();
+  }
+  segButtons.forEach(function (b) { b.addEventListener("click", function () { setFilter(b.dataset.f, true); }); });
+  var fromHash = { "#m1": "1", "#m2": "2", "#m3": "3" }[location.hash];
+  var initial = fromHash || load(KEY_FILTER) || "all";
+  if (["all", "1", "2", "3"].indexOf(initial) < 0) initial = "all";
+  setFilter(initial, false);
+
+  var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var pickTimer = null;
+  document.getElementById("btn-random").addEventListener("click", function () {
+    var v = visibleQas();
+    if (!v.length) return;
+    var pool = v.filter(function (d) { return !d.classList.contains("done"); });
+    var list = pool.length ? pool : v;
+    var pick = list[Math.floor(Math.random() * list.length)];
+    v.forEach(function (d) { d.classList.remove("picked"); });
+    pick.open = false;
+    pick.classList.add("picked");
+    pick.scrollIntoView({ block: "center", behavior: reduceMotion ? "auto" : "smooth" });
+    var s = pick.querySelector("summary");
+    if (s) s.focus({ preventScroll: true });
+    clearTimeout(pickTimer);
+    pickTimer = setTimeout(function () { pick.classList.remove("picked"); }, 5000);
+  });
+
+  var btnReset = document.getElementById("btn-reset");
+  var armed = false, armTimer = null;
+  btnReset.addEventListener("click", function () {
+    if (!armed) {
+      armed = true;
+      btnReset.textContent = "再点一次确认清空";
+      armTimer = setTimeout(function () { armed = false; btnReset.textContent = "清空勾选"; }, 3000);
+      return;
+    }
+    clearTimeout(armTimer);
+    armed = false;
+    btnReset.textContent = "清空勾选";
+    done = {};
+    persist();
+    qas.forEach(function (d) {
+      d.classList.remove("done");
+      var box = d.querySelector("input[data-q]");
+      if (box) box.checked = false;
+    });
+    updateProgress();
+  });
+
+  updateProgress();
+})();
+</script>
+</body>
+</html>
