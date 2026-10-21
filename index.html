@@ -250,7 +250,7 @@ footer { padding-top: 28px; border-top: 1px solid var(--line); font-size: 13px; 
 <header class="masthead">
   <p class="eyebrow">Python科学计算期末大作业 · 校园自习室数据分析综合实践</p>
   <h1>第9组答辩手册</h1>
-  <p class="lede">报告里已经写好了成员1、2、3的分工。每人吃透自己负责的两部分，再掌握“全组都要会”的内容。每道题先自己说一遍，再点开对照答案，答得上来就勾“我会了”。</p>
+  <p class="lede">汇报时组长（成员1）讲PPT第1—7页，成员2讲第8—12页，成员3讲第13—18页。每人吃透自己讲的部分，再掌握“全组都要会”的内容。每道题先自己说一遍，再点开对照答案，答得上来就勾“我会了”。</p>
   <ul class="tally">
     <li><b id="n-qa">65</b>道问答</li>
     <li><b id="n-drill">12</b>个现场改代码演练</li>
@@ -301,13 +301,13 @@ footer { padding-top: 28px; border-top: 1px solid var(--line); font-size: 13px; 
     <table class="roles">
       <thead><tr><th>角色</th><th>负责</th><th>分值</th><th>答辩时必须讲清楚</th></tr></thead>
       <tbody>
-        <tr><td><span class="chip m1">成员1（组长）</span></td><td>任务一 清洗与合并<br>任务六 报告与提交</td><td class="num">20 + 10</td><td>1187 → 1168 这条数字链；每条清洗规则为什么这样定；合并为什么不改变行数；三条建议</td></tr>
-        <tr><td><span class="chip m2">成员2</span></td><td>任务二 NumPy数组<br>任务三 统计与四幅图</td><td class="num">15 + 25</td><td>axis 0 和 axis 1；nan函数；每幅图一句带数字的结论；为什么看使用率而不看人数</td></tr>
-        <tr><td><span class="chip m3">成员3</span></td><td>任务四 插值与积分<br>任务五 拟合与求根</td><td class="num">15 + 15</td><td>PCHIP和线性插值的区别；积分单位ppm·h；curve_fit和RMSE；brentq为什么要两端异号；为什么选B档</td></tr>
+        <tr><td><span class="chip m1">成员1（组长）</span></td><td>任务一 清洗与合并<br>任务二 NumPy数组<br>任务六 报告与提交<br>PPT第1—7页</td><td class="num">20 + 15 + 10</td><td>1187 → 1168 这条数字链；每条清洗规则为什么这样定；合并为什么不改变行数；axis 0 和 axis 1；nan函数</td></tr>
+        <tr><td><span class="chip m2">成员2</span></td><td>任务三 统计与四幅图<br>PPT第8—12页</td><td class="num">25</td><td>每幅图一句带数字的结论；为什么看使用率而不看人数；图上的数怎么回查</td></tr>
+        <tr><td><span class="chip m3">成员3</span></td><td>任务四 插值与积分<br>任务五 拟合与求根<br>PPT第13—18页</td><td class="num">15 + 15</td><td>PCHIP和线性插值的区别；积分单位ppm·h；curve_fit和RMSE；brentq为什么要两端异号；为什么选B档；三条建议</td></tr>
       </tbody>
     </table>
   </div>
-  <p>报告和Notebook里只写了“成员1/2/3”，姓名还没填，所以现在还可以按各人特点分配：数学最好的当成员3；细心、会用Excel的当成员1；表达最好的当成员2，图表都在这部分，也适合做开场介绍。</p>
+  <p>谁是成员1、2、3，以报告文首的表格为准。PPT按这个分工讲：组长讲第1—7页（开场、研究问题与数据、任务一、任务二），成员2讲第8—12页（任务三和四幅图），成员3讲第13—18页（任务四、五，三条建议，局限，分工与核验，致谢）。提问时问到哪一部分，就由讲那部分的人先答。</p>
 
   <h3>时间安排</h3>
   <div class="grid2">
@@ -431,10 +431,12 @@ footer { padding-top: 28px; border-top: 1px solid var(--line); font-size: 13px; 
 <section class="sec member" id="m1" data-member="1">
   <div class="member-head">
     <span class="chip">成员1（组长）</span>
-    <h2>任务一 清洗与合并 · 任务六 报告与提交</h2>
+    <h2>任务一 清洗与合并 · 任务二 NumPy数组 · 任务六 报告与提交</h2>
   </div>
   <h3>这部分在做什么</h3>
-  <p>读入三张CSV，先检查问题；再按任务书的规则清洗：去空格、统一小写、转换类型、把无效记录另存、去重、越界值设为缺失；最后合并房间资料和每日安排，算出使用率，保存 clean_observations.csv 和 data_quality.csv。报告统稿和提交前的从头运行检查也归你。</p>
+  <p>读入三张CSV，先检查问题；再按任务书的规则清洗：去空格、统一小写、转换类型、把无效记录另存、去重、越界值设为缺失；最后合并房间资料和每日安排，算出使用率，保存 clean_observations.csv 和 data_quality.csv。</p>
+  <p>任务二：选一个四间房记录齐全的日期（11月2日），把使用率排成14行（小时）× 4列（房间）的数组，用nan函数求每间房的平均、每小时的平均、最大值和位置，再手算核对一个小时。</p>
+  <p>报告统稿和提交前的从头运行检查也归你。</p>
   <div class="chain" role="img" aria-label="1187行原始数据，去掉8条无效记录得1179，去掉6条完全重复得1173，去掉5条同房间同时刻重复得1168，两次左连接后仍是1168">
     <div class="node"><b>1187</b><span>原始行数</span></div>
     <div class="edge">−8 无效记录</div>
@@ -447,6 +449,30 @@ footer { padding-top: 28px; border-top: 1px solid var(--line); font-size: 13px; 
     <div class="node"><b>1168</b><span>合并后</span></div>
   </div>
   <p class="small">1168 + 8 = 1176：缺的8个时点，正好是那8条无效记录原本所在的时点。没有补造记录。</p>
+
+  <div class="table-wrap">
+    <p class="cap">rate_array（11月2日）：行是 axis 0（小时），列是 axis 1（房间）。右边一列是 axis=1 的平均，最下面一行是 axis=0 的平均。</p>
+    <table class="arr">
+      <thead><tr><th>小时</th><th>A</th><th>B</th><th>C</th><th>D</th><th class="hm">每小时平均</th></tr></thead>
+      <tbody>
+        <tr><th>8</th><td>0.1875</td><td>0.1719</td><td class="nan">NaN</td><td>0.1964</td><td class="hm">0.1853</td></tr>
+        <tr><th>9</th><td>0.2083</td><td>0.3438</td><td>0.2750</td><td>0.2857</td><td class="hm">0.2782</td></tr>
+        <tr><th>10</th><td>0.3750</td><td>0.5000</td><td>0.3750</td><td>0.4286</td><td class="hm">0.4196</td></tr>
+        <tr><th>11</th><td>0.5000</td><td>0.5781</td><td>0.5000</td><td>0.6071</td><td class="hm">0.5463</td></tr>
+        <tr><th>12</th><td class="nan">NaN</td><td>0.7812</td><td>0.6500</td><td>0.7500</td><td class="hm">0.7271</td></tr>
+        <tr><th>13</th><td>0.7917</td><td>0.9375</td><td>0.6500</td><td>0.7679</td><td class="hm">0.7868</td></tr>
+        <tr><th>14</th><td>0.9167</td><td>0.9688</td><td>0.7750</td><td>0.9107</td><td class="hm">0.8928</td></tr>
+        <tr><th>15</th><td>0.9583</td><td>0.9375</td><td>0.7750</td><td class="max">0.9821</td><td class="hm">0.9132</td></tr>
+        <tr><th>16</th><td>0.8958</td><td>0.9688</td><td>0.7500</td><td>0.9107</td><td class="hm">0.8813</td></tr>
+        <tr><th>17</th><td>0.7708</td><td>0.8906</td><td>0.5750</td><td>0.7143</td><td class="hm">0.7377</td></tr>
+        <tr><th>18</th><td>0.5625</td><td>0.6875</td><td>0.5500</td><td>0.6429</td><td class="hm">0.6107</td></tr>
+        <tr><th>19</th><td>0.5000</td><td>0.5781</td><td>0.5000</td><td>0.4464</td><td class="hm">0.5061</td></tr>
+        <tr><th>20</th><td>0.3750</td><td>0.3750</td><td>0.2750</td><td>0.3750</td><td class="hm">0.3500</td></tr>
+        <tr><th>21</th><td>0.2292</td><td>0.2656</td><td>0.2500</td><td>0.2143</td><td class="hm">0.2398</td></tr>
+      </tbody>
+      <tfoot><tr><th>每室平均</th><td>0.5593</td><td>0.6417</td><td>0.5308</td><td>0.5880</td><td class="hm">0.5812</td></tr></tfoot>
+    </table>
+  </div>
 
   <h3>必须会讲的代码</h3>
   <ol class="codelist">
@@ -505,6 +531,32 @@ work.loc[mask, col] = np.nan</code></pre>
       <pre><code>merged["seat_rate"] = merged["student_count"] / merged["capacity"]  # 0—1小数</code></pre>
       <p>使用率 = 人数 ÷ 座位数，保存为0—1的小数；人数缺失的，使用率也是NaN。</p>
     </li>
+    <li>
+      <p class="where">2.1 选日期</p>
+      <pre><code>records_per_date = clean.groupby("date").size()
+complete_dates = records_per_date[records_per_date == len(hours) * len(rooms)].index
+selected_date = complete_dates[0]</code></pre>
+      <p>每天应有14 × 4 = 56条记录。正好56条的日期共14天，取第一个，就是11月2日。</p>
+    </li>
+    <li>
+      <p class="where">2.1 长表变数组</p>
+      <pre><code>day_table = (clean[clean["date"] == selected_date]
+             .pivot(index="hour", columns="room_id", values="seat_rate")
+             .reindex(index=hours, columns=rooms))
+rate_array = day_table.to_numpy(dtype=float)</code></pre>
+      <p>pivot 把“一行一条记录”变成“行是小时、列是房间”；reindex 固定成8—21时和A、B、C、D的顺序；to_numpy 变成NumPy数组，形状(14, 4)，类型float64。</p>
+    </li>
+    <li>
+      <p class="where">2.2 按轴统计</p>
+      <pre><code>room_mean = np.nanmean(rate_array, axis=0)   # 4个数：每间房当天平均
+hour_mean = np.nanmean(rate_array, axis=1)   # 14个数：每小时四室平均</code></pre>
+      <p>对照上面的表：axis=0 沿着列往下算，每列得一个数；axis=1 沿着行往右算，每行得一个数。nanmean 计算时跳过NaN。</p>
+    </li>
+    <li>
+      <p class="where">2.2 最大值位置</p>
+      <pre><code>max_i, max_j = np.unravel_index(np.nanargmax(rate_array), rate_array.shape)</code></pre>
+      <p>nanargmax 返回把数组拉成一行后的序号31；unravel_index 按形状(14, 4)换算成第7行第3列（31 = 7 × 4 + 3），也就是15时D室。</p>
+    </li>
   </ol>
 
   <h3>常见问答</h3>
@@ -525,6 +577,13 @@ work.loc[mask, col] = np.nan</code></pre>
     <details class="qa" id="q1-14" data-member="1"><summary><span class="qno">1-14</span><span class="qtext">怎么证明原始CSV没被覆盖？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>代码只读原始CSV，结果都存成新文件。另外，数据生成后马上算了四个原始文件的MD5，最后一格再算一次，两次一致。MD5可以理解成文件的“指纹”，内容改一个字节，指纹就会变。</p><label class="got"><input type="checkbox" id="got-q1-14" data-q="q1-14">我会了</label></div></details>
     <details class="qa" id="q1-15" data-member="1"><summary><span class="qno">1-15</span><span class="qtext">data_quality.csv 里记了什么？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>每一步检查和处理的数量，共32行，按读取检查、字段清洗、无效记录、重复记录、范围检查、合并、最终结果分步记录。每行写了步骤、检查项目、数量和处理方式。</p><label class="got"><input type="checkbox" id="got-q1-15" data-q="q1-15">我会了</label></div></details>
     <details class="qa" id="q1-16" data-member="1"><summary><span class="qno">1-16</span><span class="qtext">相对路径是什么？为什么要用？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>路径从Notebook所在的文件夹算起，例如 project_root / "data" / "room_info.csv"。整个文件夹拷到别的电脑上也能直接运行，不依赖“C:\Users\……”这种只有自己电脑才有的路径。</p><label class="got"><input type="checkbox" id="got-q1-16" data-q="q1-16">我会了</label></div></details>
+    <details class="qa" id="q2-01" data-member="1"><summary><span class="qno">1-17</span><span class="qtext">为什么选11月2日？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>规则是“四间房56个时点都有记录的第一个日期”。符合的日期共14天，11月2日（周一）是第一个。</p><label class="got"><input type="checkbox" id="got-q2-01" data-q="q2-01">我会了</label></div></details>
+    <details class="qa" id="q2-02" data-member="1"><summary><span class="qno">1-18</span><span class="qtext">数组的形状和两个轴分别是什么？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>形状(14, 4)，类型float64。axis 0 是14行，代表8到21时；axis 1 是4列，依次是A、B、C、D室。</p><label class="got"><input type="checkbox" id="got-q2-02" data-q="q2-02">我会了</label></div></details>
+    <details class="qa" id="q2-03" data-member="1"><summary><span class="qno">1-19</span><span class="qtext">数组里为什么有NaN？为什么不填0？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>8时C室（R0029）和12时A室（R0005）的原始人数是空的，算不出使用率。任务书要求用NaN保留。填0等于说“没有人”，会把平均值拉低；删掉又会破坏14 × 4的形状。</p><label class="got"><input type="checkbox" id="got-q2-03" data-q="q2-03">我会了</label></div></details>
+    <details class="qa" id="q2-04" data-member="1"><summary><span class="qno">1-20</span><span class="qtext">nanmean 和 mean 有什么区别？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>mean 遇到NaN，结果就是NaN；nanmean 跳过NaN，只对有效值求平均。Notebook里做了对照：用 np.mean 按房间算，A、C两室的结果是nan。</p><label class="got"><input type="checkbox" id="got-q2-04" data-q="q2-04">我会了</label></div></details>
+    <details class="qa" id="q2-05" data-member="1"><summary><span class="qno">1-21</span><span class="qtext">axis=0 和 axis=1 分别算出什么？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>axis=0 沿着行的方向往下压，每列得到一个数，就是每间房当天的平均使用率，4个数：A 0.5593、B 0.6417、C 0.5308、D 0.5880。axis=1 沿着列的方向往右压，每行一个数，就是每小时四室的平均，14个数，最高是15时0.9132。</p><label class="got"><input type="checkbox" id="got-q2-05" data-q="q2-05">我会了</label></div></details>
+    <details class="qa" id="q2-06" data-member="1"><summary><span class="qno">1-22</span><span class="qtext">最大值在哪？怎么定位的？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>最大值0.9821，在15时D室（55人、56座）。np.nanargmax 返回拉平后的序号31，np.unravel_index 把它换算成(7, 3)：第7行是15时，第3列是D室。</p><label class="got"><input type="checkbox" id="got-q2-06" data-q="q2-06">我会了</label></div></details>
+    <details class="qa" id="q2-07" data-member="1"><summary><span class="qno">1-23</span><span class="qtext">手算核验是怎么做的？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>从原始CSV找11月2日15时的四条记录：A 46/48 = 0.9583，B 60/64 = 0.9375，C 31/40 = 0.7750，D 55/56 = 0.9821，相加除以4得0.9132，和数组里15时的平均一致。另外核对了有NaN的12时：A室缺失，其余三室 (50/64 + 26/40 + 42/56) / 3 = 0.7271，也和 nanmean 的结果一致。</p><label class="got"><input type="checkbox" id="got-q2-07" data-q="q2-07">我会了</label></div></details>
   </div>
 
   <h3>现场改代码</h3>
@@ -554,6 +613,28 @@ work.loc[mask, col] = np.nan</code></pre>
         <dt>注意</dt><dd>通常不到一分钟。答辩前一天一定要在答辩用的电脑上先跑一次。</dd>
       </dl>
     </article>
+    <article class="drill" data-member="1">
+      <h4>换一个小时做手算核验</h4>
+      <dl>
+        <dt>老师可能说</dt><dd>“换成10点，再手算核对一次。”</dd>
+        <dt>在哪改</dt><dd>2.3节的代码格，搜 <code>check_hour</code>。两行一起改：</dd>
+        <dt>改成</dt><dd><pre><code>check_hour = 10
+hand_mean = (18 / 48 + 32 / 64 + 15 / 40 + 24 / 56) / 4</code></pre></dd>
+        <dt>运行</dt><dd><kbd>Shift</kbd>+<kbd>Enter</kbd>，只运行这一格。</dd>
+        <dt>应该看到</dt><dd>原表四室人数18、32、15、24；手算0.419643，数组 hour_mean[2] = 0.419643，核对一致：True。</dd>
+        <dt>注意</dt><dd>人数要从这一格打印出的原表里抄。只改 check_hour 不改手算公式，会报 AssertionError，这正好说明手算真是按原表数字算的。</dd>
+      </dl>
+    </article>
+    <article class="drill" data-member="1">
+      <h4>换一天做数组</h4>
+      <dl>
+        <dt>老师可能说</dt><dd>“换一天试试。”</dd>
+        <dt>在哪改</dt><dd>2.1节，搜 <code>complete_dates[0]</code>，改成 <code>complete_dates[1]</code>。</dd>
+        <dt>运行</dt><dd>依次运行2.1、2.2两格。</dd>
+        <dt>应该看到</dt><dd>11月3日，没有NaN；各室平均 A 0.5164、B 0.5915、C 0.4482、D 0.5510；最大值0.9219在15时B室；15时四室平均0.8696，仍是全天最高。</dd>
+        <dt>注意</dt><dd>2.3节的手算是按11月2日写的，换日期后不要运行它，否则会报 AssertionError。</dd>
+      </dl>
+    </article>
   </div>
 </section>
 
@@ -561,63 +642,13 @@ work.loc[mask, col] = np.nan</code></pre>
 <section class="sec member" id="m2" data-member="2">
   <div class="member-head">
     <span class="chip">成员2</span>
-    <h2>任务二 NumPy数组 · 任务三 统计与四幅图</h2>
+    <h2>任务三 统计与四幅图</h2>
   </div>
   <h3>这部分在做什么</h3>
-  <p>任务二：选一个四间房记录齐全的日期（11月2日），把使用率排成14行（小时）× 4列（房间）的数组，用nan函数求每间房的平均、每小时的平均、最大值和位置，再手算核对一个小时。任务三：按房间、时段、工作日和周末做汇总表，做房间 × 小时的透视表，画四幅图，每幅图写一两句带数字的结论，并回到原数据核对。</p>
-
-  <div class="table-wrap">
-    <p class="cap">rate_array（11月2日）：行是 axis 0（小时），列是 axis 1（房间）。右边一列是 axis=1 的平均，最下面一行是 axis=0 的平均。</p>
-    <table class="arr">
-      <thead><tr><th>小时</th><th>A</th><th>B</th><th>C</th><th>D</th><th class="hm">每小时平均</th></tr></thead>
-      <tbody>
-        <tr><th>8</th><td>0.1875</td><td>0.1719</td><td class="nan">NaN</td><td>0.1964</td><td class="hm">0.1853</td></tr>
-        <tr><th>9</th><td>0.2083</td><td>0.3438</td><td>0.2750</td><td>0.2857</td><td class="hm">0.2782</td></tr>
-        <tr><th>10</th><td>0.3750</td><td>0.5000</td><td>0.3750</td><td>0.4286</td><td class="hm">0.4196</td></tr>
-        <tr><th>11</th><td>0.5000</td><td>0.5781</td><td>0.5000</td><td>0.6071</td><td class="hm">0.5463</td></tr>
-        <tr><th>12</th><td class="nan">NaN</td><td>0.7812</td><td>0.6500</td><td>0.7500</td><td class="hm">0.7271</td></tr>
-        <tr><th>13</th><td>0.7917</td><td>0.9375</td><td>0.6500</td><td>0.7679</td><td class="hm">0.7868</td></tr>
-        <tr><th>14</th><td>0.9167</td><td>0.9688</td><td>0.7750</td><td>0.9107</td><td class="hm">0.8928</td></tr>
-        <tr><th>15</th><td>0.9583</td><td>0.9375</td><td>0.7750</td><td class="max">0.9821</td><td class="hm">0.9132</td></tr>
-        <tr><th>16</th><td>0.8958</td><td>0.9688</td><td>0.7500</td><td>0.9107</td><td class="hm">0.8813</td></tr>
-        <tr><th>17</th><td>0.7708</td><td>0.8906</td><td>0.5750</td><td>0.7143</td><td class="hm">0.7377</td></tr>
-        <tr><th>18</th><td>0.5625</td><td>0.6875</td><td>0.5500</td><td>0.6429</td><td class="hm">0.6107</td></tr>
-        <tr><th>19</th><td>0.5000</td><td>0.5781</td><td>0.5000</td><td>0.4464</td><td class="hm">0.5061</td></tr>
-        <tr><th>20</th><td>0.3750</td><td>0.3750</td><td>0.2750</td><td>0.3750</td><td class="hm">0.3500</td></tr>
-        <tr><th>21</th><td>0.2292</td><td>0.2656</td><td>0.2500</td><td>0.2143</td><td class="hm">0.2398</td></tr>
-      </tbody>
-      <tfoot><tr><th>每室平均</th><td>0.5593</td><td>0.6417</td><td>0.5308</td><td>0.5880</td><td class="hm">0.5812</td></tr></tfoot>
-    </table>
-  </div>
+  <p>任务三：按房间、时段、工作日和周末做汇总表，做房间 × 小时的透视表，画四幅图，每幅图写一两句带数字的结论，并回到原数据核对。</p>
 
   <h3>必须会讲的代码</h3>
   <ol class="codelist">
-    <li>
-      <p class="where">2.1 选日期</p>
-      <pre><code>records_per_date = clean.groupby("date").size()
-complete_dates = records_per_date[records_per_date == len(hours) * len(rooms)].index
-selected_date = complete_dates[0]</code></pre>
-      <p>每天应有14 × 4 = 56条记录。正好56条的日期共14天，取第一个，就是11月2日。</p>
-    </li>
-    <li>
-      <p class="where">2.1 长表变数组</p>
-      <pre><code>day_table = (clean[clean["date"] == selected_date]
-             .pivot(index="hour", columns="room_id", values="seat_rate")
-             .reindex(index=hours, columns=rooms))
-rate_array = day_table.to_numpy(dtype=float)</code></pre>
-      <p>pivot 把“一行一条记录”变成“行是小时、列是房间”；reindex 固定成8—21时和A、B、C、D的顺序；to_numpy 变成NumPy数组，形状(14, 4)，类型float64。</p>
-    </li>
-    <li>
-      <p class="where">2.2 按轴统计</p>
-      <pre><code>room_mean = np.nanmean(rate_array, axis=0)   # 4个数：每间房当天平均
-hour_mean = np.nanmean(rate_array, axis=1)   # 14个数：每小时四室平均</code></pre>
-      <p>对照上面的表：axis=0 沿着列往下算，每列得一个数；axis=1 沿着行往右算，每行得一个数。nanmean 计算时跳过NaN。</p>
-    </li>
-    <li>
-      <p class="where">2.2 最大值位置</p>
-      <pre><code>max_i, max_j = np.unravel_index(np.nanargmax(rate_array), rate_array.shape)</code></pre>
-      <p>nanargmax 返回把数组拉成一行后的序号31；unravel_index 按形状(14, 4)换算成第7行第3列（31 = 7 × 4 + 3），也就是15时D室。</p>
-    </li>
     <li>
       <p class="where">3.1 按房间汇总</p>
       <pre><code>room_summary = (analysis.groupby("room_id")
@@ -658,41 +689,22 @@ fig.savefig(figure_dir / "fig1_room_hourly_co2_line.png", dpi=FIG_DPI, bbox_inch
 
   <h3>常见问答</h3>
   <div class="qalist">
-    <details class="qa" id="q2-01" data-member="2"><summary><span class="qno">2-01</span><span class="qtext">为什么选11月2日？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>规则是“四间房56个时点都有记录的第一个日期”。符合的日期共14天，11月2日（周一）是第一个。</p><label class="got"><input type="checkbox" id="got-q2-01" data-q="q2-01">我会了</label></div></details>
-    <details class="qa" id="q2-02" data-member="2"><summary><span class="qno">2-02</span><span class="qtext">数组的形状和两个轴分别是什么？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>形状(14, 4)，类型float64。axis 0 是14行，代表8到21时；axis 1 是4列，依次是A、B、C、D室。</p><label class="got"><input type="checkbox" id="got-q2-02" data-q="q2-02">我会了</label></div></details>
-    <details class="qa" id="q2-03" data-member="2"><summary><span class="qno">2-03</span><span class="qtext">数组里为什么有NaN？为什么不填0？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>8时C室（R0029）和12时A室（R0005）的原始人数是空的，算不出使用率。任务书要求用NaN保留。填0等于说“没有人”，会把平均值拉低；删掉又会破坏14 × 4的形状。</p><label class="got"><input type="checkbox" id="got-q2-03" data-q="q2-03">我会了</label></div></details>
-    <details class="qa" id="q2-04" data-member="2"><summary><span class="qno">2-04</span><span class="qtext">nanmean 和 mean 有什么区别？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>mean 遇到NaN，结果就是NaN；nanmean 跳过NaN，只对有效值求平均。Notebook里做了对照：用 np.mean 按房间算，A、C两室的结果是nan。</p><label class="got"><input type="checkbox" id="got-q2-04" data-q="q2-04">我会了</label></div></details>
-    <details class="qa" id="q2-05" data-member="2"><summary><span class="qno">2-05</span><span class="qtext">axis=0 和 axis=1 分别算出什么？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>axis=0 沿着行的方向往下压，每列得到一个数，就是每间房当天的平均使用率，4个数：A 0.5593、B 0.6417、C 0.5308、D 0.5880。axis=1 沿着列的方向往右压，每行一个数，就是每小时四室的平均，14个数，最高是15时0.9132。</p><label class="got"><input type="checkbox" id="got-q2-05" data-q="q2-05">我会了</label></div></details>
-    <details class="qa" id="q2-06" data-member="2"><summary><span class="qno">2-06</span><span class="qtext">最大值在哪？怎么定位的？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>最大值0.9821，在15时D室（55人、56座）。np.nanargmax 返回拉平后的序号31，np.unravel_index 把它换算成(7, 3)：第7行是15时，第3列是D室。</p><label class="got"><input type="checkbox" id="got-q2-06" data-q="q2-06">我会了</label></div></details>
-    <details class="qa" id="q2-07" data-member="2"><summary><span class="qno">2-07</span><span class="qtext">手算核验是怎么做的？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>从原始CSV找11月2日15时的四条记录：A 46/48 = 0.9583，B 60/64 = 0.9375，C 31/40 = 0.7750，D 55/56 = 0.9821，相加除以4得0.9132，和数组里15时的平均一致。另外核对了有NaN的12时：A室缺失，其余三室 (50/64 + 26/40 + 42/56) / 3 = 0.7271，也和 nanmean 的结果一致。</p><label class="got"><input type="checkbox" id="got-q2-07" data-q="q2-07">我会了</label></div></details>
-    <details class="qa" id="q2-08" data-member="2"><summary><span class="qno">2-08</span><span class="qtext">有效观测数为什么给了三个？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>记录数、有效人数个数、有效浓度个数不一样。比如B室有290条记录，其中有效人数288个、有效浓度283个。算“高于1000 ppm的比例”时，分母用有效浓度个数，缺失值不参与比较。</p><label class="got"><input type="checkbox" id="got-q2-08" data-q="q2-08">我会了</label></div></details>
-    <details class="qa" id="q2-09" data-member="2"><summary><span class="qno">2-09</span><span class="qtext">高于1000 ppm的比例怎么算？结果是多少？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>每间房里浓度大于1000的个数，除以该房间的有效浓度个数。B室151/283 = 53.4%，最高；C室26/286 = 9.1%，最低。四室合计383/1146 = 33.4%。</p><label class="got"><input type="checkbox" id="got-q2-09" data-q="q2-09">我会了</label></div></details>
-    <details class="qa" id="q2-10" data-member="2"><summary><span class="qno">2-10</span><span class="qtext">上午、下午、晚间怎么划分？结果如何？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>按任务书：上午 8 ≤ hour &lt; 12，下午 12 ≤ hour &lt; 18，晚间 18 ≤ hour ≤ 21。四间房都是下午使用率最高：B 77.9%、D 72.1%、A 69.1%、C 59.8%；上午最低（26.0%—33.7%），晚间居中（31.4%—42.0%）。</p><label class="got"><input type="checkbox" id="got-q2-10" data-q="q2-10">我会了</label></div></details>
-    <details class="qa" id="q2-11" data-member="2"><summary><span class="qno">2-11</span><span class="qtext">人数最多和使用率最高的是同一间吗？容量有什么影响？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>都是B室：平均35.16人，使用率54.9%，两种排名都是 B &gt; D &gt; A &gt; C。但人数差距会被座位数放大：B室座位是C室的1.60倍，人数是2.08倍，使用率却只是1.30倍。所以比较拥挤程度要看使用率，估算还剩多少座位时再看人数。</p><label class="got"><input type="checkbox" id="got-q2-11" data-q="q2-11">我会了</label></div></details>
-    <details class="qa" id="q2-12" data-member="2"><summary><span class="qno">2-12</span><span class="qtext">工作日和周末差多少？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>工作日15天，平均使用率53.9%；周末6天，37.0%。周末约是工作日的0.69倍，四间房的这个比值都在0.68—0.69之间。</p><label class="got"><input type="checkbox" id="got-q2-12" data-q="q2-12">我会了</label></div></details>
-    <details class="qa" id="q2-13" data-member="2"><summary><span class="qno">2-13</span><span class="qtext">哪两幅图用了Pandas的plot接口？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>图1折线图和图2柱状图用 DataFrame.plot；图3直方图和图4散点图直接用Matplotlib的 ax.hist 和 ax.scatter。任务书要求至少两幅用Pandas接口。</p><label class="got"><input type="checkbox" id="got-q2-13" data-q="q2-13">我会了</label></div></details>
-    <details class="qa" id="q2-14" data-member="2"><summary><span class="qno">2-14</span><span class="qtext">图1为什么12时和17时往下凹？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>数据里12时和17时的记录，通风状态全部是on，曲线在这两个时点下降，比如B室从11时的1060.5 ppm降到12时的984.0 ppm。但这只说明两者同时出现，不能单凭这张图说是通风造成的。</p><label class="got"><input type="checkbox" id="got-q2-14" data-q="q2-14">我会了</label></div></details>
-    <details class="qa" id="q2-15" data-member="2"><summary><span class="qno">2-15</span><span class="qtext">直方图的组距和区间是怎么定的？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>组距50 ppm，从400到1450。区间左闭右开（最后一组两端都包含），比如[950, 1000)包含950、不包含1000。[950, 1000)这组最多，108条。</p><label class="got"><input type="checkbox" id="got-q2-15" data-q="q2-15">我会了</label></div></details>
-    <details class="qa" id="q2-16" data-member="2"><summary><span class="qno">2-16</span><span class="qtext">相关系数0.904说明什么？能说人多导致CO2高吗？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>说明使用率高的时候浓度也高，两者高度正相关（A 0.92、B 0.94、C 0.86、D 0.92）。相关不等于因果，报告里只写相关。同一使用率段里开通风的平均浓度低约172 ppm，可开通风的记录集中在12时、17时和人多的时候，也不能直接当成通风的效果。</p><label class="got"><input type="checkbox" id="got-q2-16" data-q="q2-16">我会了</label></div></details>
-    <details class="qa" id="q2-17" data-member="2"><summary><span class="qno">2-17</span><span class="qtext">图表回查是怎么做的？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>查了三处。图2“B室·下午”柱高77.9%：从 clean_observations.csv 重新读取，B室12—17时有效使用率123个，平均0.7791，一致。图4最高点R0527：回到原始CSV是64人、64座、1432.4 ppm，和坐标一致。图3的[1000, 1050)柱高99：按文件逐条数也是99。</p><label class="got"><input type="checkbox" id="got-q2-17" data-q="q2-17">我会了</label></div></details>
-    <details class="qa" id="q2-18" data-member="2"><summary><span class="qno">2-18</span><span class="qtext">透视表为什么要 reindex？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>保证固定显示A—D室和8—21时，顺序也固定。万一某个小时没有数据，也会留出一列NaN，而不是少一列。</p><label class="got"><input type="checkbox" id="got-q2-18" data-q="q2-18">我会了</label></div></details>
-    <details class="qa" id="q2-19" data-member="2"><summary><span class="qno">2-19</span><span class="qtext">count 和 size 有什么区别？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>size 数行数，包括缺失值；count 只数非缺失值。B室的 size 是290，co2_ppm 的 count 是283。</p><label class="got"><input type="checkbox" id="got-q2-19" data-q="q2-19">我会了</label></div></details>
+    <details class="qa" id="q2-08" data-member="2"><summary><span class="qno">2-01</span><span class="qtext">有效观测数为什么给了三个？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>记录数、有效人数个数、有效浓度个数不一样。比如B室有290条记录，其中有效人数288个、有效浓度283个。算“高于1000 ppm的比例”时，分母用有效浓度个数，缺失值不参与比较。</p><label class="got"><input type="checkbox" id="got-q2-08" data-q="q2-08">我会了</label></div></details>
+    <details class="qa" id="q2-09" data-member="2"><summary><span class="qno">2-02</span><span class="qtext">高于1000 ppm的比例怎么算？结果是多少？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>每间房里浓度大于1000的个数，除以该房间的有效浓度个数。B室151/283 = 53.4%，最高；C室26/286 = 9.1%，最低。四室合计383/1146 = 33.4%。</p><label class="got"><input type="checkbox" id="got-q2-09" data-q="q2-09">我会了</label></div></details>
+    <details class="qa" id="q2-10" data-member="2"><summary><span class="qno">2-03</span><span class="qtext">上午、下午、晚间怎么划分？结果如何？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>按任务书：上午 8 ≤ hour &lt; 12，下午 12 ≤ hour &lt; 18，晚间 18 ≤ hour ≤ 21。四间房都是下午使用率最高：B 77.9%、D 72.1%、A 69.1%、C 59.8%；上午最低（26.0%—33.7%），晚间居中（31.4%—42.0%）。</p><label class="got"><input type="checkbox" id="got-q2-10" data-q="q2-10">我会了</label></div></details>
+    <details class="qa" id="q2-11" data-member="2"><summary><span class="qno">2-04</span><span class="qtext">人数最多和使用率最高的是同一间吗？容量有什么影响？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>都是B室：平均35.16人，使用率54.9%，两种排名都是 B &gt; D &gt; A &gt; C。但人数差距会被座位数放大：B室座位是C室的1.60倍，人数是2.08倍，使用率却只是1.30倍。所以比较拥挤程度要看使用率，估算还剩多少座位时再看人数。</p><label class="got"><input type="checkbox" id="got-q2-11" data-q="q2-11">我会了</label></div></details>
+    <details class="qa" id="q2-12" data-member="2"><summary><span class="qno">2-05</span><span class="qtext">工作日和周末差多少？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>工作日15天，平均使用率53.9%；周末6天，37.0%。周末约是工作日的0.69倍，四间房的这个比值都在0.68—0.69之间。</p><label class="got"><input type="checkbox" id="got-q2-12" data-q="q2-12">我会了</label></div></details>
+    <details class="qa" id="q2-13" data-member="2"><summary><span class="qno">2-06</span><span class="qtext">哪两幅图用了Pandas的plot接口？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>图1折线图和图2柱状图用 DataFrame.plot；图3直方图和图4散点图直接用Matplotlib的 ax.hist 和 ax.scatter。任务书要求至少两幅用Pandas接口。</p><label class="got"><input type="checkbox" id="got-q2-13" data-q="q2-13">我会了</label></div></details>
+    <details class="qa" id="q2-14" data-member="2"><summary><span class="qno">2-07</span><span class="qtext">图1为什么12时和17时往下凹？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>数据里12时和17时的记录，通风状态全部是on，曲线在这两个时点下降，比如B室从11时的1060.5 ppm降到12时的984.0 ppm。但这只说明两者同时出现，不能单凭这张图说是通风造成的。</p><label class="got"><input type="checkbox" id="got-q2-14" data-q="q2-14">我会了</label></div></details>
+    <details class="qa" id="q2-15" data-member="2"><summary><span class="qno">2-08</span><span class="qtext">直方图的组距和区间是怎么定的？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>组距50 ppm，从400到1450。区间左闭右开（最后一组两端都包含），比如[950, 1000)包含950、不包含1000。[950, 1000)这组最多，108条。</p><label class="got"><input type="checkbox" id="got-q2-15" data-q="q2-15">我会了</label></div></details>
+    <details class="qa" id="q2-16" data-member="2"><summary><span class="qno">2-09</span><span class="qtext">相关系数0.904说明什么？能说人多导致CO2高吗？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>说明使用率高的时候浓度也高，两者高度正相关（A 0.92、B 0.94、C 0.86、D 0.92）。相关不等于因果，报告里只写相关。同一使用率段里开通风的平均浓度低约172 ppm，可开通风的记录集中在12时、17时和人多的时候，也不能直接当成通风的效果。</p><label class="got"><input type="checkbox" id="got-q2-16" data-q="q2-16">我会了</label></div></details>
+    <details class="qa" id="q2-17" data-member="2"><summary><span class="qno">2-10</span><span class="qtext">图表回查是怎么做的？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>查了三处。图2“B室·下午”柱高77.9%：从 clean_observations.csv 重新读取，B室12—17时有效使用率123个，平均0.7791，一致。图4最高点R0527：回到原始CSV是64人、64座、1432.4 ppm，和坐标一致。图3的[1000, 1050)柱高99：按文件逐条数也是99。</p><label class="got"><input type="checkbox" id="got-q2-17" data-q="q2-17">我会了</label></div></details>
+    <details class="qa" id="q2-18" data-member="2"><summary><span class="qno">2-11</span><span class="qtext">透视表为什么要 reindex？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>保证固定显示A—D室和8—21时，顺序也固定。万一某个小时没有数据，也会留出一列NaN，而不是少一列。</p><label class="got"><input type="checkbox" id="got-q2-18" data-q="q2-18">我会了</label></div></details>
+    <details class="qa" id="q2-19" data-member="2"><summary><span class="qno">2-12</span><span class="qtext">count 和 size 有什么区别？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>size 数行数，包括缺失值；count 只数非缺失值。B室的 size 是290，co2_ppm 的 count 是283。</p><label class="got"><input type="checkbox" id="got-q2-19" data-q="q2-19">我会了</label></div></details>
   </div>
 
   <h3>现场改代码</h3>
   <div class="drills">
-    <article class="drill" data-member="2">
-      <h4>换一个小时做手算核验</h4>
-      <dl>
-        <dt>老师可能说</dt><dd>“换成10点，再手算核对一次。”</dd>
-        <dt>在哪改</dt><dd>2.3节的代码格，搜 <code>check_hour</code>。两行一起改：</dd>
-        <dt>改成</dt><dd><pre><code>check_hour = 10
-hand_mean = (18 / 48 + 32 / 64 + 15 / 40 + 24 / 56) / 4</code></pre></dd>
-        <dt>运行</dt><dd><kbd>Shift</kbd>+<kbd>Enter</kbd>，只运行这一格。</dd>
-        <dt>应该看到</dt><dd>原表四室人数18、32、15、24；手算0.419643，数组 hour_mean[2] = 0.419643，核对一致：True。</dd>
-        <dt>注意</dt><dd>人数要从这一格打印出的原表里抄。只改 check_hour 不改手算公式，会报 AssertionError，这正好说明手算真是按原表数字算的。</dd>
-      </dl>
-    </article>
     <article class="drill" data-member="2">
       <h4>高于1200 ppm的比例</h4>
       <dl>
@@ -712,16 +724,6 @@ hand_mean = (18 / 48 + 32 / 64 + 15 / 40 + 24 / 56) / 4</code></pre></dd>
         <dt>运行</dt><dd>只运行这一格。</dd>
         <dt>应该看到</dt><dd>11组；[900, 1000)最多，195条；[1000, 1100)有180条，正好是原来[1000, 1050)的99条加[1050, 1100)的81条。</dd>
         <dt>注意</dt><dd>不要“运行全部”：3.5节回查的是[1000, 1050)这一组，组距一变就会报 AssertionError。</dd>
-      </dl>
-    </article>
-    <article class="drill" data-member="2">
-      <h4>换一天做数组</h4>
-      <dl>
-        <dt>老师可能说</dt><dd>“换一天试试。”</dd>
-        <dt>在哪改</dt><dd>2.1节，搜 <code>complete_dates[0]</code>，改成 <code>complete_dates[1]</code>。</dd>
-        <dt>运行</dt><dd>依次运行2.1、2.2两格。</dd>
-        <dt>应该看到</dt><dd>11月3日，没有NaN；各室平均 A 0.5164、B 0.5915、C 0.4482、D 0.5510；最大值0.9219在15时B室；15时四室平均0.8696，仍是全天最高。</dd>
-        <dt>注意</dt><dd>2.3节的手算是按11月2日写的，换日期后不要运行它，否则会报 AssertionError。</dd>
       </dl>
     </article>
   </div>
@@ -909,8 +911,8 @@ energy_kwh = power_kw[level] * plan_minutes / 60</code></pre>
   <h2>交叉核验：每人亲手做一遍</h2>
   <p>报告第七节写了谁核验谁，这一项占2分。老师很可能问“你核验了什么、怎么核的”，所以每人至少把自己名下的几项亲手做一遍。用Excel或WPS时，先把文件复制一份再打开，关闭时选“不保存”。</p>
   <div class="checks">
-    <article class="check" data-member="1">
-      <div class="check-head"><span class="chip">核验人：成员1</span><h3>11月2日15时四室平均使用率</h3><span class="who">原计算：成员2</span></div>
+    <article class="check" data-member="2">
+      <div class="check-head"><span class="chip">核验人：成员2</span><h3>11月2日15时四室平均使用率</h3><span class="who">原计算：成员1</span></div>
       <ol>
         <li>打开 data/sensor_observations.csv，找到2026年11月2日15点的四条记录：A室46人，B室60人，C室31人，D室55人。</li>
         <li>座位数：A 48，B 64，C 40，D 56（room_info.csv）。</li>
@@ -1005,7 +1007,7 @@ energy_kwh = power_kw[level] * plan_minutes / 60</code></pre>
     <details class="qa" id="qt-01" data-member="all"><summary><span class="qno">全-01</span><span class="qtext">你们的数据是真实的吗？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>不是。数据是老师给的生成代码按组号9生成的教学模拟数据，数据随机种子20270183，通风试验的种子20262434。所有结论只适用于课堂模拟。</p><label class="got"><input type="checkbox" id="got-qt-01" data-q="qt-01">我会了</label></div></details>
     <details class="qa" id="qt-02" data-member="all"><summary><span class="qno">全-02</span><span class="qtext">group_id 有什么用？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>它决定随机种子：data_seed = 20261102 + 9 × 1009 = 20270183。不同组的数据不同；同一组每次运行，数据完全一样，所以结果能复现。</p><label class="got"><input type="checkbox" id="got-qt-02" data-q="qt-02">我会了</label></div></details>
     <details class="qa" id="qt-03" data-member="all"><summary><span class="qno">全-03</span><span class="qtext">怎么证明Notebook能从头运行？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>提交前重启内核、运行全部，29个代码格按顺序执行，没有报错。最后一格检查了 data、outputs、figures 三个文件夹的文件是否齐全、六幅图是否200 dpi、原始CSV有没有被改过。</p><label class="got"><input type="checkbox" id="got-qt-03" data-q="qt-03">我会了</label></div></details>
-    <details class="qa" id="qt-04" data-member="all"><summary><span class="qno">全-04</span><span class="qtext">你们是怎么分工和交叉核验的？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>成员1做任务一和报告统稿，成员2做任务二、三，成员3做任务四、五。每项关键计算都由另一个人核验：成员1手算了15时的平均使用率和brentq的根，成员2手算了14:30的线性插值和第一个梯形，成员3回查了图2的柱高和无效、重复记录的数量。说完后由对应的人讲自己是怎么核的。</p><label class="got"><input type="checkbox" id="got-qt-04" data-q="qt-04">我会了</label></div></details>
+    <details class="qa" id="qt-04" data-member="all"><summary><span class="qno">全-04</span><span class="qtext">你们是怎么分工和交叉核验的？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>成员1（组长）做任务一、任务二和报告统稿，成员2做任务三，成员3做任务四、五；汇报时组长讲PPT第1—7页，成员2讲第8—12页，成员3讲第13—18页。每项关键计算都由另一个人核验：成员2手算了组长的15时平均使用率，也手算了成员3的14:30线性插值和第一个梯形；组长用解析解核对了成员3的brentq根；成员3回查了图2的柱高和组长统计的无效、重复记录数量。说完后由对应的人讲自己是怎么核的。</p><label class="got"><input type="checkbox" id="got-qt-04" data-q="qt-04">我会了</label></div></details>
     <details class="qa" id="qt-05" data-member="all"><summary><span class="qno">全-05</span><span class="qtext">三条建议分别是什么？依据是什么？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>一、B室下午加强通风：B室下午平均使用率77.9%，平均浓度1151.8 ppm，下午88.6%的浓度高于1000，都是四室最高，可参考B档通风约16分钟。二、15时前后按使用率分流：15时平均使用率79.5%，B室平均只剩约8.3个空座，C室还有约12.6个，引导学生去C室和A室。三、周末上午只开B、D两室：周末上午平均使用率22.7%，工作日上午33.0%，周末上午任一小时四室合计最多80人，B、D两室共120座够用。每条都写了限制。</p><label class="got"><input type="checkbox" id="got-qt-05" data-q="qt-05">我会了</label></div></details>
     <details class="qa" id="qt-06" data-member="all"><summary><span class="qno">全-06</span><span class="qtext">报告里哪些数是观测值，哪些是估计值？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>人数、浓度是原始观测；A室11月12日15时的1090.0 ppm是缺失补值；14:30的浓度和12—18时的面积是插值估计；k、达标时间、能耗是拟合结果。全部数据都是课堂模拟。</p><label class="got"><input type="checkbox" id="got-qt-06" data-q="qt-06">我会了</label></div></details>
     <details class="qa" id="qt-07" data-member="all"><summary><span class="qno">全-07</span><span class="qtext">你们的结论有什么局限？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>一是模拟数据，只有21天，周末只有6天；二是通风和浓度之间只看到相关，开通风的记录集中在12时、17时和人多的时候，不能说明因果；三是通风试验从1665 ppm、无人的状态开始，和有人在的自习室不一样，实际效果要现场测。</p><label class="got"><input type="checkbox" id="got-qt-07" data-q="qt-07">我会了</label></div></details>
