@@ -252,7 +252,7 @@ footer { padding-top: 28px; border-top: 1px solid var(--line); font-size: 13px; 
   <h1>第9组答辩手册</h1>
   <p class="lede">汇报时组长（成员1）讲PPT第1—7页，成员2讲第8—12页，成员3讲第13—18页。每人吃透自己讲的部分，再掌握“全组都要会”的内容。每道题先自己说一遍，再点开对照答案，答得上来就勾“我会了”。</p>
   <ul class="tally">
-    <li><b id="n-qa">65</b>道问答</li>
+    <li><b id="n-qa">66</b>道问答</li>
     <li><b id="n-drill">12</b>个现场改代码演练</li>
     <li><b id="n-check">5</b>项交叉核验</li>
   </ul>
@@ -269,7 +269,7 @@ footer { padding-top: 28px; border-top: 1px solid var(--line); font-size: 13px; 
   <div class="tools">
     <button type="button" id="btn-random" class="primary">随机抽一题</button>
     <button type="button" id="btn-expand" aria-pressed="false">展开答案</button>
-    <span class="progress" id="progress" aria-live="polite">已掌握 0 / 65</span>
+    <span class="progress" id="progress" aria-live="polite">已掌握 0 / 66</span>
   </div>
 </div>
 
@@ -702,6 +702,7 @@ fig.savefig(figure_dir / "fig1_room_hourly_co2_line.png", dpi=FIG_DPI, bbox_inch
     <details class="qa" id="q2-17" data-member="2"><summary><span class="qno">2-10</span><span class="qtext">图表回查是怎么做的？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>查了三处。图2“B室·下午”柱高77.9%：从 clean_observations.csv 重新读取，B室12—17时有效使用率123个，平均0.7791，一致。图4最高点R0527：回到原始CSV是64人、64座、1432.4 ppm，和坐标一致。图3的[1000, 1050)柱高99：按文件逐条数也是99。</p><label class="got"><input type="checkbox" id="got-q2-17" data-q="q2-17">我会了</label></div></details>
     <details class="qa" id="q2-18" data-member="2"><summary><span class="qno">2-11</span><span class="qtext">透视表为什么要 reindex？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>保证固定显示A—D室和8—21时，顺序也固定。万一某个小时没有数据，也会留出一列NaN，而不是少一列。</p><label class="got"><input type="checkbox" id="got-q2-18" data-q="q2-18">我会了</label></div></details>
     <details class="qa" id="q2-19" data-member="2"><summary><span class="qno">2-12</span><span class="qtext">count 和 size 有什么区别？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>size 数行数，包括缺失值；count 只数非缺失值。B室的 size 是290，co2_ppm 的 count 是283。</p><label class="got"><input type="checkbox" id="got-q2-19" data-q="q2-19">我会了</label></div></details>
+    <details class="qa" id="q2-20" data-member="2"><summary><span class="qno">2-13</span><span class="qtext">图4里开通风（橙色）的点浓度反而更高，是通风让浓度变高了吗？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>不是，是人多才开通风。老师给的数据生成代码里写的是：使用率达到0.66以上或者12时、17时，通风状态就是on，开通风时浓度再减185 ppm。所以橙色点都落在人多的右上角，而人多时浓度本来就高。要看通风的作用，得比较同一使用率：使用率40%—60%时，A室开着778、关着959 ppm，B室856对1008，C室770对917，D室811对981，开通风的都更低。就像开风扇的人往往更热：不是风扇让人变热，是热了才开风扇。</p><label class="got"><input type="checkbox" id="got-q2-20" data-q="q2-20">我会了</label></div></details>
   </div>
 
   <h3>现场改代码</h3>
