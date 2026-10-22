@@ -435,8 +435,6 @@ footer { padding-top: 28px; border-top: 1px solid var(--line); font-size: 13px; 
   </div>
   <h3>这部分在做什么</h3>
   <p>读入三张CSV，先检查问题；再按任务书的规则清洗：去空格、统一小写、转换类型、把无效记录另存、去重、越界值设为缺失；最后合并房间资料和每日安排，算出使用率，保存 clean_observations.csv 和 data_quality.csv。</p>
-  <p>任务二：选一个四间房记录齐全的日期（11月2日），把使用率排成14行（小时）× 4列（房间）的数组，用nan函数求每间房的平均、每小时的平均、最大值和位置，再手算核对一个小时。</p>
-  <p>报告统稿和提交前的从头运行检查也归你。</p>
   <div class="chain" role="img" aria-label="1187行原始数据，去掉8条无效记录得1179，去掉6条完全重复得1173，去掉5条同房间同时刻重复得1168，两次左连接后仍是1168">
     <div class="node"><b>1187</b><span>原始行数</span></div>
     <div class="edge">−8 无效记录</div>
@@ -449,6 +447,8 @@ footer { padding-top: 28px; border-top: 1px solid var(--line); font-size: 13px; 
     <div class="node"><b>1168</b><span>合并后</span></div>
   </div>
   <p class="small">1168 + 8 = 1176：缺的8个时点，正好是那8条无效记录原本所在的时点。没有补造记录。</p>
+
+  <p>任务二：选一个四间房记录齐全的日期（11月2日），把使用率排成14行（小时）× 4列（房间）的数组，用nan函数求每间房的平均、每小时的平均、最大值和位置，再手算核对一个小时。</p>
 
   <div class="table-wrap">
     <p class="cap">rate_array（11月2日）：行是 axis 0（小时），列是 axis 1（房间）。右边一列是 axis=1 的平均，最下面一行是 axis=0 的平均。</p>
@@ -473,6 +473,7 @@ footer { padding-top: 28px; border-top: 1px solid var(--line); font-size: 13px; 
       <tfoot><tr><th>每室平均</th><td>0.5593</td><td>0.6417</td><td>0.5308</td><td>0.5880</td><td class="hm">0.5812</td></tr></tfoot>
     </table>
   </div>
+  <p>报告统稿和提交前的从头运行检查也归你。</p>
 
   <h3>必须会讲的代码</h3>
   <ol class="codelist">
@@ -697,7 +698,7 @@ fig.savefig(figure_dir / "fig1_room_hourly_co2_line.png", dpi=FIG_DPI, bbox_inch
     <details class="qa" id="q2-13" data-member="2"><summary><span class="qno">2-06</span><span class="qtext">哪两幅图用了Pandas的plot接口？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>图1折线图和图2柱状图用 DataFrame.plot；图3直方图和图4散点图直接用Matplotlib的 ax.hist 和 ax.scatter。任务书要求至少两幅用Pandas接口。</p><label class="got"><input type="checkbox" id="got-q2-13" data-q="q2-13">我会了</label></div></details>
     <details class="qa" id="q2-14" data-member="2"><summary><span class="qno">2-07</span><span class="qtext">图1为什么12时和17时往下凹？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>数据里12时和17时的记录，通风状态全部是on，曲线在这两个时点下降，比如B室从11时的1060.5 ppm降到12时的984.0 ppm。但这只说明两者同时出现，不能单凭这张图说是通风造成的。</p><label class="got"><input type="checkbox" id="got-q2-14" data-q="q2-14">我会了</label></div></details>
     <details class="qa" id="q2-15" data-member="2"><summary><span class="qno">2-08</span><span class="qtext">直方图的组距和区间是怎么定的？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>组距50 ppm，从400到1450。区间左闭右开（最后一组两端都包含），比如[950, 1000)包含950、不包含1000。[950, 1000)这组最多，108条。</p><label class="got"><input type="checkbox" id="got-q2-15" data-q="q2-15">我会了</label></div></details>
-    <details class="qa" id="q2-16" data-member="2"><summary><span class="qno">2-09</span><span class="qtext">相关系数0.904说明什么？能说人多导致CO2高吗？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>说明使用率高的时候浓度也高，两者高度正相关（A 0.92、B 0.94、C 0.86、D 0.92）。相关不等于因果，报告里只写相关。同一使用率段里开通风的平均浓度低约172 ppm，可开通风的记录集中在12时、17时和人多的时候，也不能直接当成通风的效果。</p><label class="got"><input type="checkbox" id="got-q2-16" data-q="q2-16">我会了</label></div></details>
+    <details class="qa" id="q2-16" data-member="2"><summary><span class="qno">2-09</span><span class="qtext">相关系数0.904说明什么？能说人多导致CO2高吗？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>说明使用率高的时候浓度也高，两者高度正相关（A 0.92、B 0.94、C 0.86、D 0.92）。相关不等于因果，报告里只写相关。使用率40%—60%这一段，开通风的记录平均794.1 ppm，关闭的966.2 ppm，低约172 ppm；可开通风的记录集中在12时、17时和人多的时候，也不能直接当成通风的效果。</p><label class="got"><input type="checkbox" id="got-q2-16" data-q="q2-16">我会了</label></div></details>
     <details class="qa" id="q2-17" data-member="2"><summary><span class="qno">2-10</span><span class="qtext">图表回查是怎么做的？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>查了三处。图2“B室·下午”柱高77.9%：从 clean_observations.csv 重新读取，B室12—17时有效使用率123个，平均0.7791，一致。图4最高点R0527：回到原始CSV是64人、64座、1432.4 ppm，和坐标一致。图3的[1000, 1050)柱高99：按文件逐条数也是99。</p><label class="got"><input type="checkbox" id="got-q2-17" data-q="q2-17">我会了</label></div></details>
     <details class="qa" id="q2-18" data-member="2"><summary><span class="qno">2-11</span><span class="qtext">透视表为什么要 reindex？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>保证固定显示A—D室和8—21时，顺序也固定。万一某个小时没有数据，也会留出一列NaN，而不是少一列。</p><label class="got"><input type="checkbox" id="got-q2-18" data-q="q2-18">我会了</label></div></details>
     <details class="qa" id="q2-19" data-member="2"><summary><span class="qno">2-12</span><span class="qtext">count 和 size 有什么区别？</span><span class="mark" aria-hidden="true"></span></summary><div class="ans"><p>size 数行数，包括缺失值；count 只数非缺失值。B室的 size 是290，co2_ppm 的 count 是283。</p><label class="got"><input type="checkbox" id="got-q2-19" data-q="q2-19">我会了</label></div></details>
